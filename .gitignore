@@ -8,7 +8,10 @@
 
 # This is a file intended for hooking in a custom Vagrant configuration on up
 /Customfile
-/vvv-custom.yml
+# NOTE Atte Keinänen 21.2.2018:
+# In Dominante website development, we want the custom configuration be
+# available for everyone
+# /vvv-custom.yml
 
 # Allow for custom provisioning scripts that are not included with the repo
 /provision/provision-custom.sh
