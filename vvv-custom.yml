@@ -16,7 +16,7 @@ sites:
   # The wordpress-default configuration provides a default installation of the
   # latest version of WordPress.
   dominante-wp:
-    repo: https://github.com/Varying-Vagrant-Vagrants/vvv-wordpress-default.git
+    repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template.git
     hosts:
       - dominante-wp
 
