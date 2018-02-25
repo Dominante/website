@@ -1,0 +1,82 @@
+/********* Utilities *********/
+ul {
+  list-style-type: none;
+}
+
+h3 {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  border-width: 0px 0px 1px 0px;
+  border-color: black;
+  border-style: solid;
+}
+.color-white {
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.border {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-full {
+  flex: 1;
+}
+
+.flex-column {
+  flex-flow: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.margin-top-1 {
+  margin-top: 2px;
+}
+.margin-top-3 {
+  margin-top: 6px;
+}
+.margin-right-1 {
+  margin-right: 2px;
+}
+
+.padding-1 {
+  padding: 2px;
+}
+.padding-right-3 {
+  padding-right: 6px;
+}
+
+.bg-brown {
+  background-color: #57170A;
+}
+
+/********* Individual elements *********/
+.bg-header {
+  height: 300px;
+  background: url("../images/krypta_googlekuva_tummennettu.jpg");
+  background-size: cover;
+}
+
+

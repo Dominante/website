@@ -1,0 +1,5 @@
+/log/
+/provision/vvv-nginx.conf
+*.swp
+# Let's share static files in Dominante website development
+# /public_html
