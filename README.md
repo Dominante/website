@@ -31,7 +31,7 @@ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-vbguest
 git clone https://github.com/Dominante/website [hakemiston-nimi]`
 ```
 
-3) Mene repon hakemistoon `cd [hakemiston-nimi]` ja alusta VVV-kehitysympäristö komennolla `vagrant up`. Tämä muun muassa asentaa virtualisoidun Ubuntu-käyttöjärjestelmän ja siksi alustaminen voi viedä aikaa. Lue VVV:n [Installation](https://varyingvagrantvagrants.org/docs/en-US/installation)-sivulta "What Did That Do" -osio jos haluat tutustua kehitysympäristöön tarkemmin.
+3) Mene repon hakemistoon `cd [hakemiston-nimi]` ja alusta VVV-kehitysympäristö komennolla `vagrant up`. Tämä muun muassa asentaa virtualisoidun Ubuntu-käyttöjärjestelmän ja siksi alustaminen voi viedä aikaa. Lue VVV:n [Installation](https://varyingvagrantvagrants.org/docs/en-US/installation/)-sivulta "What Did That Do" -osio jos haluat tutustua kehitysympäristöön tarkemmin.
 
 4) VVV-Kehitysympäristön pitäisi nyt olla pystyssä. Käy osoittesssa `http://vvv.test/`
 tarkistaaksesi että VVV on käynnissä.
@@ -44,7 +44,7 @@ Usage](https://varyingvagrantvagrants.org/docs/en-US/references/basic-usage/)
 
 Alkuun teemme yksinkertaisen staattisen version sivusta, joka ei käytä WordPressiä. Jos sinulla on kehitysympäristö
 käynnissä, staattinen sivu näkyy osoitteessa
-```http://dominante-static```
+`http://dominante-static`.
 
 Staattisen verkkosivun HTML/CSS/JS -tiedostot ovat hakemistossa
 `www/dominante-static/public_html`.
