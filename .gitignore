@@ -54,7 +54,7 @@ DS_Store
 # only put the static website files to git.
 /www/*
 !/www/dominante-static
-
+!/www/dominante-wp
 # And no need to share individual SQL files with each other
 *.sql
 *.sql.gz
