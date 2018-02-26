@@ -72,6 +72,16 @@ h3 {
   background-color: #57170A;
 }
 
+/********* Read more functionality *********/
+.readmore-clicked {
+  display: none;
+}
+.readmore-section-clicked .readmore-clicked {
+  display: block;
+}
+.readmore-section-clicked .readmore-not-clicked {
+  display: none;
+}
 /********* Individual elements *********/
 .bg-header {
   height: 300px;
