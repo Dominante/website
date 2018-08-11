@@ -172,11 +172,11 @@ input[type="reset"],
 input[type="button"] {
   display: inline-block;
   height: 38px;
-  padding: 0 30px;
+  padding: 0 8px;
   color: #555;
   text-align: center;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: normal;
   line-height: 38px;
   letter-spacing: .1rem;
   text-transform: uppercase;
