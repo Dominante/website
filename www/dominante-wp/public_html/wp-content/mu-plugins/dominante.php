@@ -62,7 +62,8 @@ function add_dominante_post_types() {
 	);
 	register_post_type( 'album', $album_config);
 	set_custom_fields('album', array(
-		'album_purchase_link' => 'Replace this text with a url to the album purchase page (like Holvi Store). Remove this text if you don\'t need a button to album purchase page.'
+		'button_url' => 'Replace this text with a url to the album purchase page (like Holvi Store). Remove this text if you don\'t need a button to album purchase page.',
+		'button_text' => 'Osta levy (modify or remove this button text)'
 	));
 
 	// Trips only need title, excerpt, content and image, so we're fine with default fields Wordpress provides
@@ -73,6 +74,7 @@ function add_dominante_post_types() {
 		)
 	);
 	register_post_type( 'trip', $trip_config);
+	set_custom_fields('trip', array());
 
 	$concert_config = array_merge(
 		get_shared_content_type_config("Concert"),
@@ -82,15 +84,24 @@ function add_dominante_post_types() {
 	);
 	register_post_type( 'concert', $concert_config);
 	set_custom_fields('concert', array(
-		'concert_ticket_link' => 'Replace this text with a url to the concert ticket purchase page (like Holvi Store). Remove this text if you don\'t need a button to ticket purchase page.'
+		'button_url' => 'Replace this text with a url to the concert ticket purchase page (like Holvi Store). Remove this text if you don\'t need a button to ticket purchase page.',
+		'button_text' => 'Osta lippuja (modify or remove this button text)'
 	));
 
+	$concert_config = array_merge(
+		get_shared_content_type_config("News Piece"),
+		array(
+			'menu_icon' => 'dashicons-format-aside'
+		)
+	);
+	register_post_type( 'news_piece', $concert_config);
+	set_custom_fields('news_piece', array(
+		'button_url' => 'Replace this text with a button url. Remove this text if you don\'t need a button to your news piece.',
+		'button_text' => 'Lisää tietoa (modify or remove this button text)'
+	));
 
 }
 add_action( 'init', 'add_dominante_post_types' );
-
-
-
 
 /**
  * Remove default post type from admin menus
