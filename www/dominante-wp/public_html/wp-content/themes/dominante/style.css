@@ -513,6 +513,12 @@ a:hover, a:active {
 	position: relative;
 }
 
+.site-header .site-description {
+	display: flex;
+	justify-content: center;
+	background-color: #511C10;
+}
+
 .main-navigation {
 	display: flex;
 	justify-content: center;
@@ -730,6 +736,9 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.site-content {
+	margin: 0 20%;
+}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
