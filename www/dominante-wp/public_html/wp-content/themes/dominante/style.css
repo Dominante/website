@@ -517,6 +517,10 @@ a:hover, a:active {
 	display: flex;
 	justify-content: center;
 	background-color: #511C10;
+	padding: 16px 0;
+	color: #FFF;
+	font-weight: normal;
+	text-align: center;
 }
 
 .main-navigation {
