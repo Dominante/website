@@ -511,6 +511,7 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .site-header {
 	position: relative;
+	background-color: #000;
 }
 
 .site-header .site-description {
@@ -574,7 +575,7 @@ a:hover, a:active {
 
 .main-navigation .menu-item {
 	margin: 4px 2px 2px 2px;
-	border: 1px solid black;
+	border: 1px solid #FFF;
 	padding: 2px 2px 0px 2px;
 	text-transform: uppercase;
 	font-size: 11px;
@@ -583,7 +584,7 @@ a:hover, a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-	color: black;
+	color: #FFF;
 }
 
 .main-navigation a:hover {
@@ -741,7 +742,17 @@ a:hover, a:active {
 # Content
 --------------------------------------------------------------*/
 .site-content {
-	margin: 0 20%;
+	margin: auto;
+	max-width: 55%;
+	min-width: 815px;
+	text-align: center;
+}
+
+@media(max-width: 815px){
+    .site-content {
+        max-width: 80%;
+		min-width: 0;
+    }
 }
 /*--------------------------------------------------------------
 ## Posts and pages
