@@ -7,6 +7,10 @@
 /public_html/wp-content/*
 !/public_html/wp-content/themes
 !/public_html/wp-content/mu-plugins
+!/public_html/wp-content/plugins
 
 /public_html/wp-content/themes/*
 !/public_html/wp-content/themes/dominante
+
+/public_html/wp-content/plugins/*
+!/public_html/wp-content/plugins/dominante-blocks
