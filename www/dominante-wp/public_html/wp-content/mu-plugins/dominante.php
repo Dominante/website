@@ -12,6 +12,7 @@ define( 'WP_DEBUG', true );
  * Custom content types for Dominante
  */
 
+
 function get_shared_content_type_config($content_type_name) {
 	return array(
 		"labels" => array(
@@ -34,24 +35,10 @@ function get_shared_content_type_config($content_type_name) {
 		'show_in_nav_menus' => true,
 		'show_ui' => true,
 		'supports' => array('title', 'editor', 'revisions', 'custom-fields', 'thumbnail', 'excerpt'),
+		'show_in_rest' => true
 	);
 }
 
-
-function set_custom_fields($post_type, $fields) {
-	add_action('wp_insert_post', function($post_id) use ($post_type, $fields) {
-		if ( $_GET['post_type'] == $post_type ) {
-			foreach ($fields as $field_name => $field_default_value) {
-				add_post_meta($post_id, $field_name, $field_default_value, true);
-			}
-		}
-		return true;
-	});
-
-	add_action('admin_menu', function() use ($post_type) {
-		remove_meta_box( 'slugdiv', $post_type, 'normal' );
-	});
-}
 
 function add_dominante_post_types() {
 	$album_config = array_merge(
@@ -61,10 +48,7 @@ function add_dominante_post_types() {
 		)
 	);
 	register_post_type( 'album', $album_config);
-	set_custom_fields('album', array(
-		'button_url' => 'Replace this text with a url to the album purchase page (like Holvi Store). Remove this text if you don\'t need a button to album purchase page.',
-		'button_text' => 'Osta levy (modify or remove this button text)'
-	));
+
 
 	// Trips only need title, excerpt, content and image, so we're fine with default fields Wordpress provides
 	$trip_config = array_merge(
@@ -74,7 +58,7 @@ function add_dominante_post_types() {
 		)
 	);
 	register_post_type( 'trip', $trip_config);
-	set_custom_fields('trip', array());
+
 
 	$concert_config = array_merge(
 		get_shared_content_type_config("Concert"),
@@ -83,10 +67,7 @@ function add_dominante_post_types() {
 		)
 	);
 	register_post_type( 'concert', $concert_config);
-	set_custom_fields('concert', array(
-		'button_url' => 'Replace this text with a url to the concert ticket purchase page (like Holvi Store). Remove this text if you don\'t need a button to ticket purchase page.',
-		'button_text' => 'Osta lippuja (modify or remove this button text)'
-	));
+
 
 	$concert_config = array_merge(
 		get_shared_content_type_config("News Piece"),
@@ -95,11 +76,6 @@ function add_dominante_post_types() {
 		)
 	);
 	register_post_type( 'news_piece', $concert_config);
-	set_custom_fields('news_piece', array(
-		'button_url' => 'Replace this text with a button url. Remove this text if you don\'t need a button to your news piece.',
-		'button_text' => 'Lisää tietoa (modify or remove this button text)'
-	));
-
 }
 add_action( 'init', 'add_dominante_post_types' );
 
