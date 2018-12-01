@@ -12,56 +12,46 @@ const { Component } = wp.element;
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { SelectControl } = wp.components;
+const { SelectControl, ServerSideRender } = wp.components;
 const { InspectorControls } = wp.editor;
-
-class DominanteBlock extends Component {
-  render() {
-    const { contentItem } = this.props;
-
-    if (contentItem) {
-      return <div style={{display: "flex"}}>
-        <div style={{width: "170px", paddingRight: "15px"}}>
-          Kuva comes here
-        </div>
-        <div style={{flex: "1"}}>
-          <h2>{contentItem.title.rendered}</h2>
-          <div dangerouslySetInnerHTML={{__html: contentItem.content.rendered }} />
-        </div>
-      </div>
-    } else {
-      return null;
-    }
-  }
-}
 
 class DominanteBlockEdit extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { items: null, selectedItemId: null };
+    this.state = { items: null, selectedItemId: props.attributes.selectedItemId || null };
 
     this.getItems(props);
   }
 
   getItems = () => {
-    const { contentType, selectedItemId } = this.props;
+    const { contentType } = this.props;
+    const props = this.props;
+
     const contentTypeClass = contentType[0].toUpperCase() + contentType.slice(1);
 
+
     return ( new wp.api.collections[contentTypeClass]() ).fetch().then( ( items ) => {
-      items && this.setState({
-        items,
-        selectedItemId: selectedItemId || (items[0] && items[0].id)
-      });
+      if (items) {
+        const selectedItemId = props.attributes.selectedItemId || (items[0] && items[0].id);
+
+        this.props.setAttributes({ selectedItemId });
+        this.setState({
+          items,
+          selectedItemId
+        });
+      }
     });
   };
 
   setItems = (item) => {
-    this.setState({ selectedItemId: parseInt(item) })
+    const id = parseInt(item);
+    this.setState({ selectedItemId: id })
+    this.props.setAttributes({ selectedItemId: id })
   };
 
   render = () => {
-    const { contentTypeName } = this.props;
+    const { contentType,contentTypeName } = this.props;
     const { selectedItemId, items } = this.state;
 
     if (items == null) {
@@ -70,7 +60,6 @@ class DominanteBlockEdit extends Component {
 
       return <p>{`No content available. Please create some new ${contentTypeName}s!`}</p>
     } else {
-      const selectedItem = items && items.find((item) => { return item.id === selectedItemId });
       const selectTitle = `Select ${contentTypeName}`;
       let options = items.map((item) =>
         ({value:item.id, label:item.title.rendered})
@@ -78,7 +67,10 @@ class DominanteBlockEdit extends Component {
 
       return (
         <p>
-          <DominanteBlock contentItem={selectedItem} />
+          <ServerSideRender
+            block={`cgb/block-dominante-blocks-${contentType.replace('_','-')}`}
+            attributes={{selectedItemId}}
+          />
           <InspectorControls key='inspector'>
             <SelectControl
               value={ selectedItemId }
@@ -123,8 +115,8 @@ function getDominanteBlock(title, contentType, icon) {
       edit: function( props ) {
         // Creates a <p class='wp-block-cgb-block-dominante-blocks'></p> (or something like that.....?)
         return (
-          <div className={ props.className }>
-            <DominanteBlockEdit contentType={contentType} contentTypeName={title} />
+          <div >
+            <DominanteBlockEdit contentType={contentType} contentTypeName={title} {...props} />
           </div>
         );
       },
@@ -138,25 +130,13 @@ function getDominanteBlock(title, contentType, icon) {
        * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
        */
       save: function( props ) {
-        return (
-          <div>
-            <p>Hello from the frontend.</p>
-            <p>
-              It was created via{ ' ' }
-              <code>
-                <a href="https://github.com/ahmadawais/create-guten-block">
-                  create-guten-block
-                </a>
-              </code>.
-            </p>
-          </div>
-        );
+        return null
       },
     }
 }
 
 registerBlockType(
-  'cgb/block-dominante-blocks-news',
+  'cgb/block-dominante-blocks-news-piece',
   getDominanteBlock('News piece', 'news_piece', 'format-aside')
 );
 registerBlockType(

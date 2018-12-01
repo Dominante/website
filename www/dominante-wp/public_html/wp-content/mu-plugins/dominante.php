@@ -101,3 +101,6 @@ add_action( 'wp_dashboard_setup', 'remove_draft_widget', 999 );
 function remove_draft_widget(){
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 }
+
+
+add_image_size('dominante-block-image',200,200, true);

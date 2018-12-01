@@ -82,3 +82,80 @@ function dominante_blocks_categories( $categories, $post ) {
 add_filter( 'block_categories', 'dominante_blocks_categories', 10, 2 );
 
 wp_enqueue_script( 'wp-api' );
+
+
+
+function dominante_block_render_callback($content_type, $attributes) {
+	$id = $attributes['selectedItemId'];
+	$query = new WP_Query("post_type=$content_type&p=$id");
+	$results = $query->posts;
+
+	if (count($results) == 1) {
+		$item = $results[0];
+		$thumbnail = get_the_post_thumbnail($id, 'dominante-block-image');
+	    $thumbnail = $thumbnail != '' ? $thumbnail : "Please add featured image to this $content_type!";
+		return <<<EOD
+<div class="dominante-block">
+	<div class="dominante-block-photo">$thumbnail</div>
+
+	<div class="dominante-block-text">
+		<h3 class="dominante-block-title">$item->post_title</h3>
+		<div class="dominante-block-content">$item->post_content</div>
+	</div>	
+</div>
+EOD;
+	} else {
+		return "<div>CONTENT ITEM OF TYPE $content_type HAS BEEN DELETED. PLEASE REMOVE THIS BLOCK FROM THIS PAGE!</div>";
+	}
+}
+
+function dominante_block_album_render_callback($attributes) {
+	return dominante_block_render_callback('album', $attributes);
+}
+register_block_type( 'cgb/block-dominante-blocks-album', array(
+	'render_callback' => 'dominante_block_album_render_callback',
+	'attributes' => array(
+		'selectedItemId' => array(
+			'type' => 'number'
+		)
+	),
+));
+
+
+function dominante_block_trip_render_callback( $attributes, $content ) {
+	return dominante_block_render_callback('trip', $attributes);
+}
+register_block_type( 'cgb/block-dominante-blocks-trip', array(
+	'render_callback' => 'dominante_block_trip_render_callback',
+	'attributes' => array(
+		'selectedItemId' => array(
+			'type' => 'number'
+		)
+	)
+));
+
+
+function dominante_block_concert_render_callback( $attributes, $content ) {
+	return dominante_block_render_callback('concert', $attributes);
+}
+register_block_type( 'cgb/block-dominante-blocks-concert', array(
+	'render_callback' => 'dominante_block_concert_render_callback',
+	'attributes' => array(
+		'selectedItemId' => array(
+			'type' => 'number'
+		)
+	)
+));
+
+
+function dominante_block_news_piece_render_callback( $attributes, $content ) {
+	return dominante_block_render_callback('news_piece', $attributes);
+}
+register_block_type( 'cgb/block-dominante-blocks-news-piece', array(
+	'render_callback' => 'dominante_block_news_piece_render_callback',
+	'attributes' => array(
+		'selectedItemId' => array(
+			'type' => 'number'
+		)
+	)
+));
