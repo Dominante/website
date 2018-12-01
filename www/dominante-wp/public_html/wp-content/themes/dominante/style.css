@@ -517,7 +517,7 @@ a:hover, a:active {
 .site-header .site-description {
 	display: flex;
 	justify-content: center;
-	background-color: #904064;
+	background-color: rgba(144,40,64);
 	padding: 16px 0;
 	color: #FFF;
 	font-weight: normal;
@@ -574,18 +574,18 @@ a:hover, a:active {
 }
 
 .main-navigation .menu-item {
-	margin: 4px 2px 2px 2px;
-	border: 1px solid #FFF;
-	padding: 2px 2px 0px 2px;
+	margin: 4px 3px 2px 3px;
+	border: 1px solid rgba(249,249,250);
+	padding: 2px 4px 0px 4px;
 	text-transform: uppercase;
 	font-size: 11px;
-	background-color: rgba(0,0,0,0.2)
+	background-color: rgba(8,6,0,0.2);
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-	color: #FFF;
+	color: rgba(249,249,250);
 }
 
 .main-navigation a:hover {
@@ -742,11 +742,22 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+h1.entry-title {
+	font-family: 'Heebo', sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	border-bottom: 3px solid black;
+	margin-left: 38%;
+	margin-right: 38%;
+}
+
 .site-content {
 	margin: auto;
 	max-width: 55%;
 	min-width: 815px;
 	text-align: center;
+	font-family: 'Quicksand', sans-serif;
 }
 
 @media(max-width: 815px){
@@ -757,6 +768,15 @@ a:hover, a:active {
 	.site-description {
 		display: none;
 	}
+}
+
+p.site-title {
+	display: none;
+}
+
+.site-footer {
+	background-color: rgba(8,6,0);
+	color: rgba(249, 249, 250),
 }
 /*--------------------------------------------------------------
 ## Posts and pages
