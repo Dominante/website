@@ -513,11 +513,11 @@ a:hover, a:active {
 	position: relative;
 	background-color: #000;
 }
-/*863041  */
+
 .site-header .site-description {
 	display: flex;
 	justify-content: center;
-	background-color: #863041;
+	background-color: #904064;
 	padding: 16px 0;
 	color: #FFF;
 	font-weight: normal;
@@ -579,6 +579,7 @@ a:hover, a:active {
 	padding: 2px 2px 0px 2px;
 	text-transform: uppercase;
 	font-size: 11px;
+	background-color: rgba(0,0,0,0.2)
 }
 
 .main-navigation a {
