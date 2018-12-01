@@ -776,8 +776,27 @@ p.site-title {
 
 .site-footer {
 	background-color: rgba(8,6,0);
-	color: rgba(249, 249, 250),
+	color: rgba(249, 249, 250);
+	font-family: 'Heebo', sans-serif;
+	font-size: 10px;
+	padding: 30px 0;
+	text-align: center;
 }
+
+.site-footer .site-info {
+	text-align: left;
+	display: inline-block;
+}
+
+.site-footer td {
+	/* border: 1px solid white; */
+	padding: 0 30px;
+}
+
+.site-footer table {
+	margin: 0;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
