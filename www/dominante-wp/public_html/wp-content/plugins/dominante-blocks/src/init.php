@@ -80,3 +80,5 @@ function dominante_blocks_categories( $categories, $post ) {
 	);
 }
 add_filter( 'block_categories', 'dominante_blocks_categories', 10, 2 );
+
+wp_enqueue_script( 'wp-api' );

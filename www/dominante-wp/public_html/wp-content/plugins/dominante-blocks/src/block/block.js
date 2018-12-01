@@ -8,10 +8,90 @@
 //  Import CSS.
 import './style.scss';
 import './editor.scss';
+const { Component } = wp.element;
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const { SelectControl } = wp.components;
+const { InspectorControls } = wp.editor;
 
+class DominanteBlock extends Component {
+  render() {
+    const { contentItem } = this.props;
+
+    if (contentItem) {
+      return <div style={{display: "flex"}}>
+        <div style={{width: "170px", paddingRight: "15px"}}>
+          Kuva comes here
+        </div>
+        <div style={{flex: "1"}}>
+          <h2>{contentItem.title.rendered}</h2>
+          <div dangerouslySetInnerHTML={{__html: contentItem.content.rendered }} />
+        </div>
+      </div>
+    } else {
+      return null;
+    }
+  }
+}
+
+class DominanteBlockEdit extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { items: null, selectedItemId: null };
+
+    this.getItems(props);
+  }
+
+  getItems = () => {
+    const { contentType, selectedItemId } = this.props;
+    const contentTypeClass = contentType[0].toUpperCase() + contentType.slice(1);
+
+    return ( new wp.api.collections[contentTypeClass]() ).fetch().then( ( items ) => {
+      items && this.setState({
+        items,
+        selectedItemId: selectedItemId || (items[0] && items[0].id)
+      });
+    });
+  };
+
+  setItems = (item) => {
+    this.setState({ selectedItemId: parseInt(item) })
+  };
+
+  render = () => {
+    const { contentTypeName } = this.props;
+    const { selectedItemId, items } = this.state;
+
+    if (items == null) {
+      return <p>Loading content items...</p>
+    } else if (items.length == 0) {
+
+      return <p>{`No content available. Please create some new ${contentTypeName}s!`}</p>
+    } else {
+      const selectedItem = items && items.find((item) => { return item.id === selectedItemId });
+      const selectTitle = `Select ${contentTypeName}`;
+      let options = items.map((item) =>
+        ({value:item.id, label:item.title.rendered})
+      );
+
+      return (
+        <p>
+          <DominanteBlock contentItem={selectedItem} />
+          <InspectorControls key='inspector'>
+            <SelectControl
+              value={ selectedItemId }
+              label={ selectTitle }
+              options={ options }
+              onChange={ this.setItems }
+            />
+          </InspectorControls>
+        </p>
+      )
+    }
+  }
+}
 
 /**
  * Register: aa Gutenberg Block.
@@ -26,7 +106,7 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-function getDominanteBlock(title, content_type, icon) {
+function getDominanteBlock(title, contentType, icon) {
     return {
       // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
       title: title, // Block title.
@@ -41,18 +121,10 @@ function getDominanteBlock(title, content_type, icon) {
        * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
        */
       edit: function( props ) {
-        // Creates a <p class='wp-block-cgb-block-dominante-blocks'></p>.
+        // Creates a <p class='wp-block-cgb-block-dominante-blocks'></p> (or something like that.....?)
         return (
           <div className={ props.className }>
-            <p>So awesome! Yay</p>
-            <p>
-              It was created via{ ' ' }
-              <code>
-                <a href="https://github.com/ahmadawais/create-guten-block">
-                  create-guten-block
-                </a>
-              </code>.
-            </p>
+            <DominanteBlockEdit contentType={contentType} contentTypeName={title} />
           </div>
         );
       },
