@@ -5,11 +5,46 @@
  * which makes it higher in priority.
  */
 
-.wp-block-cgb-block-dominante-blocks  {
-  background: $green;
-  border: 0.2rem solid $black;
-  color: $black;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem;
+/* Dominante blocks */
+
+.dominante-block {
+  text-align: left;
+  display: flex;
+  padding-bottom: 15px;
 }
+
+.dominante-block-text {
+  flex: 1;
+}
+.dominante-block-photo {
+  padding-right: 20px;
+}
+.dominante-block-title {
+  text-align: left;
+}
+.dominante-block-content {
+
+}
+
+@media(max-width: 815px){
+  .dominante-block-photo {
+    padding-right: 10px;
+    width: 140px;
+  }
+}
+
+/********* Read more functionality *********/
+.readmore-clicked {
+  display: none;
+}
+.readmore-section-clicked .readmore-clicked {
+  display: block;
+}
+.readmore-section-clicked .readmore-not-clicked {
+  display: none;
+}
+
+.wp-block-button__link {
+  color: white;
+}
+

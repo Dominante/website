@@ -121,6 +121,8 @@ function dominante_scripts() {
 
 	wp_enqueue_script( 'dominante-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'dominante-readmore', get_template_directory_uri() . '/js/readmore.js', array(), '20181215', true );
+
 	wp_enqueue_script( 'dominante-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

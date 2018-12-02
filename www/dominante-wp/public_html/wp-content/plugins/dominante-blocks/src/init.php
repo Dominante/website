@@ -94,16 +94,43 @@ function dominante_block_render_callback($content_type, $attributes) {
 		$item = $results[0];
 		$thumbnail = get_the_post_thumbnail($id, 'dominante-block-image');
 	    $thumbnail = $thumbnail != '' ? $thumbnail : "Please add featured image to this $content_type!";
-		return <<<EOD
+	    $excerpt = has_excerpt($id) ? $item->post_excerpt : '';
+
+	    if (has_excerpt($id)) {
+		    return <<<EOD
 <div class="dominante-block">
 	<div class="dominante-block-photo">$thumbnail</div>
 
 	<div class="dominante-block-text">
 		<h3 class="dominante-block-title">$item->post_title</h3>
-		<div class="dominante-block-content">$item->post_content</div>
+		<div class="dominante-block-content readmore-section">
+			<div class="readmore-not-clicked">
+			  $excerpt
+			</div>
+			<div class="readmore-clicked">
+			  $item->post_content
+			</div>
+			<a class="readmore-not-clicked readmore-toggle" href="">Lue lisää</a>
+			<a class="readmore-clicked readmore-toggle" href="">Näytä vähemmän</a>
+		</div>
 	</div>	
 </div>
 EOD;
+	    } else {
+		    return <<<EOD
+<div class="dominante-block">
+	<div class="dominante-block-photo">$thumbnail</div>
+
+	<div class="dominante-block-text">
+		<h3 class="dominante-block-title">$item->post_title</h3>
+		<div class="dominante-block-content readmore-section">
+		    $item->post_content
+		</div>
+	</div>	
+</div>
+EOD;
+
+	    }
 	} else {
 		return "<div>CONTENT ITEM OF TYPE $content_type HAS BEEN DELETED. PLEASE REMOVE THIS BLOCK FROM THIS PAGE!</div>";
 	}
