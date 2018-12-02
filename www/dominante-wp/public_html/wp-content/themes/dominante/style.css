@@ -742,6 +742,17 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.site-branding {
+	line-height: 0;
+}
+
+.site-branding .site-description {
+	line-height: 1.5;
+}
+
+.header-image {
+	width: 100%
+}
 
 h1.entry-title {
 	font-family: 'Heebo', sans-serif;
@@ -778,7 +789,7 @@ p.site-title {
 	background-color: rgba(8,6,0);
 	color: rgba(249, 249, 250);
 	font-family: 'Heebo', sans-serif;
-	font-size: 10px;
+	font-size: 12px;
 	padding: 30px 0;
 	text-align: center;
 }
@@ -870,7 +881,7 @@ object {
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
-	display: inline-block;
+	display: none;
 }
 
 /*--------------------------------------------------------------
