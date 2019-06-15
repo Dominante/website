@@ -79,6 +79,8 @@ if ( ! function_exists( 'dominante_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		));
+
+		add_theme_support( 'post-thumbnails');
 	}
 endif;
 add_action( 'after_setup_theme', 'dominante_setup' );
