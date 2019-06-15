@@ -17,8 +17,8 @@
 		<div class="site-info flexbox-container"> <!-- flexbox container -->
 					<div class="flexbox-column">
 						DOMINANTE RY<br>
-						PL 69<br>
-						02151 ESPOO
+						PL 69 02151 ESPOO<br/>
+                        <a href="/medialle">Medialle</a>
 					</div>
 					<div class="flexbox-column">
 						Intendentti<br>

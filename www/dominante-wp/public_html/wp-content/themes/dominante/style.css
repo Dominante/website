@@ -754,7 +754,7 @@ a:active {
 .site-content:after,
 .site-footer:after {
   clear: both;
-}
+gg}
 
 /*--------------------------------------------------------------
 # Widgets
@@ -796,6 +796,9 @@ a:active {
 /* TODO: Miten sivun yläosan kuvan saisi toimimaan paremmin mobiililaitteilla? */
 /* Nyt täyttää suuren osan ruudusta, koska korkeus on aina 400 px. */
 /* Ehkä max-height auttaisi? */
+@media screen {
+
+}
 .site-branding .wp-post-image {
   height: 400px;
   width: 100%;

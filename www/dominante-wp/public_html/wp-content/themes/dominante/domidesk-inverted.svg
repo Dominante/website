@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 601.23 129.44" preserveAspectRatio="none"><defs>
+	<linearGradient id="grad" gradientTransform="rotate(37)">
+        <stop offset="0" stop-color="rgba(57,16,35)"/>
+        <stop offset="0.33" stop-color="rgba(105,16,48)"/>
+        <stop offset="0.76" stop-color="rgba(193,30,74)"/>
+        <stop offset="1.00" stop-color="rgba(235,31,85)"/>
+    </linearGradient>
+    <style>.cls-1{fill:none;}.cls-2{fill:url(#grad);}</style></defs><title>domidesk_1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="cls-1" width="601.23" height="129.44"/><polygon class="cls-2" points="525.79 0 587.24 51.88 461.04 129.44 378.26 129.44 0 48.4 0 129.44 601.23 129.44 601.23 0 525.79 0"/><polygon class="cls-1" pcoints="0 48.4 378.26 129.44 461.04 129.44 587.24 51.88 525.79 0 0 0 0 48.4"/></g></g></svg>
