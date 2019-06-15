@@ -22,7 +22,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
 	<?php wp_head(); ?>
-</head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
@@ -30,8 +29,12 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<img class="header-image" src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
-			<?php $description = get_bloginfo( 'description', 'display' );
+			<?php if ( has_post_thumbnail() ) {
+				the_post_thumbnail();
+			} else { ?>
+				<img class="header-image" src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
+			<?php }
+			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
 			<div class="site-description">
 				<p class="site-content"><?php echo $description; /* WPCS: xss ok. */ ?></p>

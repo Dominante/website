@@ -122,8 +122,8 @@ function dominante_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
-
-	if ( is_singular() ) :
+	// adds thumbnail to beginning of page (in addition to the thumbnail ad the header image)
+	/*if ( is_singular() ) :
 	?>
 
 	<div class="post-thumbnail">
@@ -142,6 +142,6 @@ function dominante_post_thumbnail() {
 		?>
 	</a>
 
-	<?php endif; // End is_singular().
+	<?php endif; // End is_singular().*/
 }
 endif;
