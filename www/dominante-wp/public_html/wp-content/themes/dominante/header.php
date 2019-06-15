@@ -49,7 +49,7 @@
                     }
 
                     .site-description {
-                        
+
                     }
                 </style>
                 <div class="header-overlay wp-post-image" ></div>
@@ -71,7 +71,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button id="burger" class="open-main-nav" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Valikko', 'dominante' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Valikko', 'dominante' ); ?></button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
