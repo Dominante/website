@@ -96,6 +96,8 @@ function dominante_block_render_callback($content_type, $attributes) {
 	    $thumbnail = $thumbnail != '' ? $thumbnail : "Please add featured image to this $content_type!";
 	    $excerpt = has_excerpt($id) ? $item->post_excerpt : '';
 
+	    // TODO: Needs to detect the button with its link
+        // in order to add a link to the image
 	    if (has_excerpt($id)) {
 		    return <<<EOD
 <div class="dominante-block">

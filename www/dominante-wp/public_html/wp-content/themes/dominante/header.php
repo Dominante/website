@@ -48,8 +48,16 @@
                         }
                     }
 
-                    .site-description {
-
+                    @media only screen and (min-width: 751px) {
+                        .site-description {
+                            position: absolute;
+                            top: 291px;
+                            display: flex;
+                            justify-content: center;
+                            color: #fff;
+                            font-weight: normal;
+                            text-align: left;
+                        }
                     }
                 </style>
                 <div class="header-overlay wp-post-image" ></div>
@@ -71,7 +79,6 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Valikko', 'dominante' ); ?></button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',

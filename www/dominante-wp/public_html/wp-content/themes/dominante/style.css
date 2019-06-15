@@ -528,15 +528,6 @@ a:active {
   position: relative;
 }
 
-.site-header .site-description {
-  display: flex;
-  justify-content: center;
-  padding: 16px 0;
-  color: #fff;
-  font-weight: normal;
-  text-align: center;
-}
-
 .main-navigation {
   padding: 4px 0px 7px 0px;
   font-family: "Quicksand", sans-serif;
