@@ -529,6 +529,7 @@ a:active {
 }
 
 .main-navigation {
+  padding: 4px 0px 7px 0px;
   font-family: "Quicksand", sans-serif;
   display: flex;
   justify-content: center;
@@ -593,6 +594,7 @@ a:active {
 .main-navigation a {
   display: block;
   text-decoration: none;
+  color: black;
 }
 
 .main-navigation a:hover {
@@ -812,7 +814,7 @@ h1.entry-title {
 }
 
 .content-area .wp-block-column h2 {
-  margin-bottom: 0em;
+  margin-bottom: 0.5em;
 }
 
 .content-area h3 {
@@ -823,6 +825,12 @@ h1.entry-title {
 
 .content-area p {
   margin-top: 0;
+  text-align: left
+}
+
+.content-area .wp-block-column p {
+  text-align: center;
+
 }
 
 .content-area p span {
@@ -851,9 +859,6 @@ h1.entry-title {
   .site-content {
     max-width: 80%;
     min-width: 0;
-  }
-  .site-description {
-    display: none;
   }
 }
 
@@ -1080,4 +1085,43 @@ object {
 
 .wp-block-button__link {
   color: white;
+}
+
+/* Main menu positionning */
+.main-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: #FFF;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: all .375s;
+}
+
+.main-nav.is-open {
+    opacity: 1;
+    z-index: 100;
+    visibility: visible;
+}
+
+/* Yellow band effect */
+.main-nav::before {
+	 content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -15px;
+    background: #FEDC2A;
+    transform-origin: 0 0;
+    transform: skew(-14deg) translateX(-120%);
+    transition: all .275s .1s;
+}
+
+.main-nav.is-open::before {
+    transform: skew(-14deg) translateX(0);
 }
