@@ -557,7 +557,6 @@ a:active {
   top: 0;
   left: 0;
   position: fixed; /* Set the navbar to fixed position */
-  top: 50;
 }
 
 .main-navigation a{
