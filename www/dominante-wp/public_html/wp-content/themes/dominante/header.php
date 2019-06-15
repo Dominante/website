@@ -29,16 +29,41 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php if ( has_post_thumbnail() ) {
-				the_post_thumbnail();
-			} else { ?>
-				<img class="header-image" src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
-			<?php }
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-			<div class="site-description">
-				<p class="site-content"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			</div>
+            <div class="header-image-container">
+                <style>
+                    @media only screen and (max-width: 750px) {
+                        .header-overlay {
+                            position: absolute;
+                            background-image: url('/wp-content/themes/dominante/domikanny-inverted.svg');
+                            background-size: cover;
+                        }
+                    }
+
+                    @media only screen and (min-width: 751px) {
+                        .header-overlay {
+                            position: absolute;
+                            background-image: url('/wp-content/themes/dominante/domidesk-inverted.svg');
+                            background-size: cover;
+                        }
+                    }
+
+                    .site-description {
+                    }
+                </style>
+                <div class="header-overlay wp-post-image" ></div>
+<!--                <div style="position: absolute; background-image: url('/wp-content/themes/dominante/domidesk-inverted.svg')" class="wp-post-image" ></div>-->
+                <?php if ( has_post_thumbnail() ) {
+                    the_post_thumbnail();
+                } else { ?>
+                    <img style="position: relative" class="header-image" src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
+                <?php } ?>
+            </div>
+			<?php
+                $description = get_bloginfo( 'description', 'display' );
+                if ( $description || is_customize_preview() ) : ?>
+                <div class="site-description">
+                    <p class="site-content"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                </div>
 			<?php
 			endif; ?>
 		</div><!-- .site-branding -->

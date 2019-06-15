@@ -18,7 +18,7 @@
 					<div class="flexbox-column">
 						DOMINANTE RY<br>
 						PL 69 02151 ESPOO<br/>
-                        <a href="/medialle">Medialle</a>
+                        <a href="/medialle" style="text-color: white !important; ">Medialle</a>
 					</div>
 					<div class="flexbox-column">
 						Intendentti<br>
