@@ -54,6 +54,7 @@ html {
 
 body {
   margin: 0;
+  background: #fff;
 }
 
 article,
@@ -353,11 +354,6 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  background: #fff;
-  /* Fallback for when there is no custom background color defined. */
-}
-
 hr {
   background-color: #ccc;
   border: 0;
@@ -551,6 +547,8 @@ a:active {
 }
 
 .main-navigation {
+  padding: 4px 0px 7px 0px;
+  background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: center;
   width: 100%;
@@ -599,14 +597,14 @@ a:active {
   position: relative;
 }
 
-/* TODO: Pitäisikö fontin kokoa kasvattaa? */
 .main-navigation .menu-item {
   margin: 4px 3px 2px 3px;
   border: 1px solid rgba(249, 249, 250);
   padding: 2px 4px 0px 4px;
-  text-transform: uppercase;
-  font-size: 11px;
+  /*text-transform: uppercase;*/
+  font-size: 14px;
   background-color: rgba(8, 6, 0, 0.2);
+  border-radius: 5px;
 }
 
 .main-navigation a {
@@ -772,21 +770,6 @@ a:active {
 # Content
 --------------------------------------------------------------*/
 .site {
-  /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
-  /* background-image: linear-gradient(
-    to top,
-    #c4c5c7 0%,
-    #dcdddf 52%,
-    #ebebeb 100%
-  ); */
-  background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
-    radial-gradient(
-      91% 146%,
-      rgba(255, 255, 255, 0.5) 47%,
-      rgba(0, 0, 0, 0.5) 100%
-    );
-  background-blend-mode: screen;
-  /* background-image: linear-gradient(to top, #dfe9f3 0%, white 100%); */
 }
 
 .site-branding {
