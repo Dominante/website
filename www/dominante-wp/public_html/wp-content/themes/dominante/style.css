@@ -812,29 +812,20 @@ a:active {
 /* Nyt täyttää suuren osan ruudusta, koska korkeus on aina 400 px. */
 /* Ehkä max-height auttaisi? */
 .site-branding .wp-post-image {
-	height: 400px;
-	width: 100%;
-	object-fit: cover;
-	object-position: 50% 100%;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
 }
 
 h1.entry-title {
-<<<<<<< HEAD
   font-family: "Heebo", sans-serif;
   font-weight: normal;
   font-size: 20px;
   border-bottom: 3px solid black;
-  margin-left: 38%;
-  margin-right: 38%;
-=======
-	font-family: 'Heebo', sans-serif;
-	font-weight: normal;
-	font-size: 20px;
-	border-bottom: 3px solid black;
-	display: inline-block;
-	margin-top: 2em;
-	margin-bottom: 2em;
->>>>>>> 61c2c5db5210c82ddf6e9e6883046a1024a092d6
+  display: inline-block;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .site-content {
@@ -845,7 +836,6 @@ h1.entry-title {
   font-family: "Quicksand", sans-serif;
 }
 
-<<<<<<< HEAD
 @media (max-width: 815px) {
   .site-content {
     max-width: 80%;
@@ -854,16 +844,6 @@ h1.entry-title {
   .site-description {
     display: none;
   }
-=======
-@media(max-width: 815px) {
-    .site-content {
-    	max-width: 80%;
-			min-width: 0;
-    }
-		.site-description {
-			display: none;
-		}
->>>>>>> 61c2c5db5210c82ddf6e9e6883046a1024a092d6
 }
 
 p.site-title {
@@ -873,38 +853,16 @@ p.site-title {
 /* Footer */
 
 .site-footer {
-<<<<<<< HEAD
   background-color: rgba(8, 6, 0);
   color: rgba(249, 249, 250);
   font-family: "Heebo", sans-serif;
   font-size: 12px;
-  padding: 30px 0;
-  text-align: center;
-}
-
-.site-footer .site-info {
-  text-align: left;
-  display: inline-block;
-}
-
-.site-footer td {
-  /* border: 1px solid white; */
-  padding: 0 30px;
-}
-
-.site-footer table {
-  margin: 0;
-=======
-	background-color: rgba(8,6,0);
-	color: rgba(249, 249, 250);
-	font-family: 'Heebo', sans-serif;
-	font-size: 12px;
 }
 
 .site-info {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* Footerin flexbox-layout */
@@ -913,14 +871,13 @@ p.site-title {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-	margin-top: 2em;
+  margin-top: 2em;
 }
 
 .flexbox-column {
   min-width: 15em;
   width: auto;
   margin-bottom: 2em;
->>>>>>> 61c2c5db5210c82ddf6e9e6883046a1024a092d6
 }
 
 /*--------------------------------------------------------------
@@ -1074,15 +1031,9 @@ object {
 /* Dominante blocks */
 
 .dominante-block {
-<<<<<<< HEAD
   text-align: left;
   display: flex;
   padding-bottom: 15px;
-=======
-    text-align: left;
-    display: flex;
-		padding-bottom: 15px;
->>>>>>> 61c2c5db5210c82ddf6e9e6883046a1024a092d6
 }
 
 .dominante-block-text {
@@ -1097,20 +1048,12 @@ object {
 .dominante-block-content {
 }
 
-<<<<<<< HEAD
+/* TODO: Kannattaisiko kuva siirtää tässä block-text-blockin yläpuolelle (pienillä ruuduilla)? */
 @media (max-width: 815px) {
   .dominante-block-photo {
     padding-right: 10px;
     width: 140px;
   }
-=======
-/* TODO: Kannattaisiko kuva siirtää tässä block-text-blockin yläpuolelle (pienillä ruuduilla)? */
-@media(max-width: 815px){
-	.dominante-block-photo {
-		padding-right: 10px;
-        width: 140px;
-	}
->>>>>>> 61c2c5db5210c82ddf6e9e6883046a1024a092d6
 }
 
 /********* Read more functionality *********/
