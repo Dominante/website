@@ -548,7 +548,7 @@ a:active {
 
 .main-navigation {
   padding: 4px 0px 7px 0px;
-  background: rgba(255,255,255,255);
+  background: rgba(255, 255, 255, 255);
   font-family: "Quicksand", sans-serif;
   display: flex;
   justify-content: center;
@@ -559,7 +559,11 @@ a:active {
   position: fixed;
 }
 
-.main-navigation a{
+.logged-in .main-navigation {
+  top: 32px;
+}
+
+.main-navigation a {
   color: black;
   padding: 0px 20px;
   text-decoration: none;
@@ -800,6 +804,16 @@ a:active {
 }
 
 h1.entry-title {
+  font-family: "Heebo", sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  border-bottom: 3px solid black;
+  display: inline-block;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.content-area h2 {
   font-family: "Heebo", sans-serif;
   font-weight: normal;
   font-size: 20px;
