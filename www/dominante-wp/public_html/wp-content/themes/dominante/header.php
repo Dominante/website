@@ -48,15 +48,32 @@
                         }
                     }
 
-                    @media only screen and (min-width: 751px) {
+                    @media only screen and (max-width: 751px) {
                         .site-description {
                             position: absolute;
-                            top: 291px;
-                            display: flex;
-                            justify-content: center;
+                            top: 283px;
                             color: #fff;
                             font-weight: normal;
                             text-align: left;
+                            padding-left: 28px;
+                            font-size: 14px;
+                            padding-right: 10px;
+                        }
+                    }
+                    @media only screen and (min-width: 751px) {
+                        .site-description {
+                            position: absolute;
+                            top: 308px;
+                            color: #fff;
+                            font-weight: normal;
+                            text-align: left;
+                            padding-left: 20px;
+                        }
+                    }
+
+                    @media only screen and (min-width: 1237px) {
+                        .site-description {
+                            top: 332px;
                         }
                     }
                 </style>
@@ -65,15 +82,16 @@
                 <?php if ( has_post_thumbnail() ) {
                     the_post_thumbnail();
                 } else { ?>
-                    <img style="position: relative" class="header-image" src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
                 <?php } ?>
             </div>
 			<?php
                 $description = get_bloginfo( 'description', 'display' );
                 if ( $description || is_customize_preview() ) : ?>
-                <div class="site-description">
-                    <p class="site-content"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                </div>
+                <div class="site-description" style="font-family: 'Quicksand', sans-serif; width: 100%">
+                    <div style="float: right; width: 65%; height: 1em;"></div>
+                    <div style="float: right; width: 54%; height: 1em;"></div>
+                    <?php echo $description; /* WPCS: xss ok. */ ?>
+               </div>
 			<?php
 			endif; ?>
 		</div><!-- .site-branding -->

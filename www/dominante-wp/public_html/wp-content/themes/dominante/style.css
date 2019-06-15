@@ -529,7 +529,7 @@ a:active {
 }
 
 .main-navigation {
-  padding: 4px 0px 7px 0px;
+  padding: 0px 0px 7px 0px;
   font-family: "Quicksand", sans-serif;
   display: flex;
   justify-content: center;

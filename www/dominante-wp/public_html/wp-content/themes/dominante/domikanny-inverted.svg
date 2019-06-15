@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.34 129.44" preserveAspectRatio="none"><defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.34 149.44" preserveAspectRatio="none"><defs>
 
         <linearGradient id="grad" gradientTransform="rotate(37)">
             <stop offset="0" stop-color="rgba(57,16,35)"/>
@@ -6,5 +6,5 @@
 	        <stop offset="0.76" stop-color="rgba(193,30,74)"/>
 	        <stop offset="1.00" stop-color="rgba(235,31,85)"/>
         </linearGradient>
-        <style>.cls-1{fill:none;}.cls-2{fill:url(#grad);}</style></defs><title>domikänny_1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="cls-1" width="118.34" height="129.44"/>
-  <polygon class="cls-2" points="80.35 0 118.34 38.55 118.34 100.21 87.95 114.85 0 81.34 0 129.44 118.34 129.44 118.34 0 80.35 0" fill="url(#gradient)"/></g></g></svg>
+        <style>.cls-1{fill:none;}.cls-2{fill:url(#grad);}</style></defs><title>domikänny_1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="cls-1" width="118.34" height="149.44"/>
+  <polygon class="cls-2" points="80.35 0 118.34 38.55 118.34 100.21 87.95 114.85 0 81.34 0 149.44 118.34 149.44 118.34 0 80.35 0"/></g></g></svg>
