@@ -788,6 +788,10 @@ gg}
   object-position: 50% 100%;
 }
 
+.content-area {
+  text-align: center;
+}
+
 h1.entry-title {
   font-family: "Heebo", sans-serif;
   font-weight: normal;
@@ -806,13 +810,42 @@ h1.entry-title {
   display: inline-block;
   margin-top: 2em;
   margin-bottom: 2em;
+  text-align: center;
+}
+
+.content-area .wp-block-column h2 {
+  margin-bottom: 0em;
+}
+
+.content-area h3 {
+  text-align: left;
+  color: rgb(260, 106, 35);
+  margin-bottom: 0.2em;
+}
+
+.content-area p {
+  margin-top: 0;
+}
+
+.content-area p span {
+  text-align: left;
+}
+
+.content-area a {
+  color: rgb(260, 106, 35);
+}
+
+.content-area a.wp-block-button__link {
+  color: #fff;
+  background-color: rgb(260, 106, 35);
+  border-radius: 0;
+  padding: 4px 36px;
 }
 
 .site-content {
   margin: auto;
   max-width: 55%;
   min-width: 815px;
-  text-align: center;
   font-family: "Quicksand", sans-serif;
 }
 
