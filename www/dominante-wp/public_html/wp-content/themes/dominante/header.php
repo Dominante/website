@@ -31,6 +31,7 @@
 		<div class="site-branding">
             <div class="header-image-container">
                 <style>
+
                     @media only screen and (max-width: 750px) {
                         .header-overlay {
                             position: absolute;
@@ -48,6 +49,7 @@
                     }
 
                     .site-description {
+                        
                     }
                 </style>
                 <div class="header-overlay wp-post-image" ></div>

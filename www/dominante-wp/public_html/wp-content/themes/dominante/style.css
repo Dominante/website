@@ -526,7 +526,6 @@ a:active {
 --------------------------------------------------------------*/
 .site-header {
   position: relative;
-  background-color: #000;
 }
 
 .site-header .site-description {
@@ -536,19 +535,10 @@ a:active {
   color: #fff;
   font-weight: normal;
   text-align: center;
-  background: rgb(57, 16, 35);
-  background: linear-gradient(
-    37deg,
-    rgba(57, 16, 35, 1) 0%,
-    rgba(105, 16, 48, 1) 33%,
-    rgba(193, 30, 74, 1) 76%,
-    rgba(235, 31, 85, 1) 100%
-  );
 }
 
 .main-navigation {
   padding: 4px 0px 7px 0px;
-  background: rgba(255, 255, 255, 255);
   font-family: "Quicksand", sans-serif;
   display: flex;
   justify-content: center;
