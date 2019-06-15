@@ -532,12 +532,12 @@ a:active {
   font-family: "Quicksand", sans-serif;
   display: flex;
   justify-content: center;
-  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   position: fixed;
   z-index: 100;
+  width: 100%;
 }
 
 .logged-in .main-navigation {
