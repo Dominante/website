@@ -815,7 +815,7 @@ h1.entry-title {
 
 .content-area p {
   margin-top: 0;
-  text-align: left
+  text-align: justify;
 }
 
 .content-area .wp-block-column p {
@@ -1114,4 +1114,19 @@ object {
 
 .main-nav.is-open::before {
     transform: skew(-14deg) translateX(0);
+}
+
+/* Contact form 7 styling */
+
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
+    width: 100%;
+}
+
+.wpcf7 input[type="submit"],
+.wpcf7 input[type="button"] {
+background-color:coral;
+width:10em;
+text-align: center;
+text-transform:uppercase;
+padding: 20px;
 }
