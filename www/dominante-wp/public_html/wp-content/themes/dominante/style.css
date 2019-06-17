@@ -498,7 +498,7 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  color: #e66a23;
   text-decoration: none;
 }
 
@@ -1126,7 +1126,7 @@ div.wpcf7 {
 }
 
 .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
-    width: 100%;
+    max-width: 100%;
 }
 
 .wpcf7 input[type="submit"],

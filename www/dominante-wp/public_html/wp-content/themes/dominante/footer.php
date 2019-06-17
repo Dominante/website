@@ -35,9 +35,12 @@
 						dominante@dominante.fi
 					</div>
 					<div class="flexbox-column">
-						Kvartettitilaukset<br>
+						Kvartettivastaava<br>
 						Paavo Kekkonen<br>
 						kvartettipalvelu@dominante.fi
+					</div>
+					<div class="flexbox-column">
+						<?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
 					</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
