@@ -1118,6 +1118,12 @@ object {
 
 /* Contact form 7 styling */
 
+div.wpcf7 {
+  border: 1px solid coral;
+  border-color: rgb(120, 30, 50);
+  padding: 1em;
+}
+
 .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
     width: 100%;
 }
@@ -1128,5 +1134,8 @@ background-color:coral;
 width:10em;
 text-align: center;
 text-transform:uppercase;
-padding: 20px;
+color: #fff;
+background-color: rgb(260, 106, 35);
+border-radius: 0;
+padding: 1em 2em;
 }
