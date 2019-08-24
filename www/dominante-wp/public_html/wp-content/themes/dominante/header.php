@@ -80,12 +80,13 @@
                 <div class="header-overlay wp-post-image" ></div>
 <!--                <div style="position: absolute; background-image: url('/wp-content/themes/dominante/domidesk-inverted.svg')" class="wp-post-image" ></div>-->
                 <?php if ( has_post_thumbnail() ) {
-                    the_post_thumbnail();
+                    the_post_thumbnail('post-thumbnail', ['style' => get_post_meta( get_the_ID(), 'header_image_css', true)]);
                 } else { ?>
                 <?php } ?>
             </div>
 			<?php
-                $description = get_bloginfo( 'description', 'display' );
+                $alt_description =  get_post_meta( get_the_ID(), 'alternative_description', true);
+                $description = empty($alt_description) ? get_bloginfo( 'description', 'display' ) : $alt_description;
                 if ( $description || is_customize_preview() ) : ?>
                 <div class="site-description" style="font-family: 'Quicksand', sans-serif; width: 100%">
                     <div style="float: right; width: 65%; height: 1em;"></div>
