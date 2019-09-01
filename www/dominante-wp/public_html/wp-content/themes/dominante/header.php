@@ -35,7 +35,7 @@
                     @media only screen and (max-width: 750px) {
                         .header-overlay {
                             position: absolute;
-                            background-image: url('/wp-content/themes/dominante/domikanny-inverted.svg');
+                            background-image: url('<?php echo get_site_url() ?>/wp-content/themes/dominante/domikanny-inverted.svg');
                             background-size: cover;
                         }
                     }
@@ -43,10 +43,11 @@
                     @media only screen and (min-width: 751px) {
                         .header-overlay {
                             position: absolute;
-                            background-image: url('/wp-content/themes/dominante/domidesk-inverted.svg');
+                            background-image: url('<?php echo get_site_url() ?>/wp-content/themes/dominante/domidesk-inverted.svg');
                             background-size: cover;
                         }
                     }
+                    
 
                     @media only screen and (max-width: 751px) {
                         .site-description {
