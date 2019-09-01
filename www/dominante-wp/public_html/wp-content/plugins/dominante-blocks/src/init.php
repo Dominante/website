@@ -96,6 +96,15 @@ function dominante_block_render_callback($content_type, $attributes) {
 	    $thumbnail = $thumbnail != '' ? $thumbnail : "Please add featured image to this $content_type!";
 	    $excerpt = has_excerpt($id) ? $item->post_excerpt : '';
 
+        $blocks = parse_blocks( $item->post_content );
+
+        $content_output = '';
+
+        foreach ( $blocks as $block ) {
+            $content_output .= render_block( $block );
+        }
+
+        $content_output = apply_filters( 'the_content', $content_output );
 	    // TODO: Needs to detect the button with its link
         // in order to add a link to the image
 	    if (has_excerpt($id)) {
@@ -110,7 +119,7 @@ function dominante_block_render_callback($content_type, $attributes) {
 			  $excerpt
 			</div>
 			<div class="readmore-clicked">
-			  $item->post_content
+			  $content_output
 			</div>
 			<a class="readmore-not-clicked readmore-toggle" href="">Lue lisää</a>
 			<a class="readmore-clicked readmore-toggle" href="">Näytä vähemmän</a>
@@ -126,7 +135,7 @@ EOD;
 	<div class="dominante-block-text">
 		<h3 class="dominante-block-title">$item->post_title</h3>
 		<div class="dominante-block-content readmore-section">
-		    $item->post_content
+		    $content_output
 		</div>
 	</div>	
 </div>

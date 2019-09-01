@@ -79,6 +79,26 @@ function add_dominante_post_types() {
 }
 add_action( 'init', 'add_dominante_post_types' );
 
+
+add_filter( 'pll_get_post_types', 'add_cpt_to_pll', 10, 2 );
+
+function add_cpt_to_pll( $post_types, $is_settings ) {
+    if ( $is_settings ) {
+        // hides 'my_cpt' from the list of custom post types in Polylang settings
+        unset( $post_types['album'] );
+        unset( $post_types['trip'] );
+        unset( $post_types['concert'] );
+        unset( $post_types['news_piece'] );
+    } else {
+        // enables language and translation management for 'my_cpt'
+        $post_types['album'] = 'album';
+        $post_types['trip'] = 'trip';
+        $post_types['concert'] = 'concert';
+        $post_types['news_piece'] = 'news_piece';
+    }
+    return $post_types;
+}
+
 /**
  * Remove default post type from admin menus
  * (We don't use the default posts for anything)
