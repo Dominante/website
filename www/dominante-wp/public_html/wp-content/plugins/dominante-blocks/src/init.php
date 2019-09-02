@@ -109,7 +109,7 @@ function dominante_block_render_callback($content_type, $attributes) {
         // in order to add a link to the image
 	    if (has_excerpt($id)) {
 		    return <<<EOD
-<div class="dominante-block">
+<div class="dominante-block dominante-block-type-$content_type">
 	<div class="dominante-block-photo">$thumbnail</div>
 
 	<div class="dominante-block-text">
