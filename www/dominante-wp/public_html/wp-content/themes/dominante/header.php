@@ -45,16 +45,34 @@
                     @media only screen and (max-width: 750px) {
                         .header-overlay {
                             position: absolute;
-                            background-image: url('<?php echo get_site_url() ?>/wp-content/themes/dominante/domikanny-inverted.svg');
-                            background-size: cover;
+                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
+                            background-size: auto 100%;
+                            background-repeat: no-repeat;
+                            background-position-x: -620px;
+                        }
+                        .header-overlay-2 {
+                            position: absolute;
+                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_right_v2.svg);
+                            background-size: auto 100%;
+                            background-repeat: no-repeat;
+                            background-position: right -550px center;
                         }
                     }
 
                     @media only screen and (min-width: 751px) {
                         .header-overlay {
                             position: absolute;
-                            background-image: url('<?php echo get_site_url() ?>/wp-content/themes/dominante/domidesk-inverted.svg');
-                            background-size: cover;
+                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
+                            background-size: auto 100%;
+                            background-repeat: no-repeat;
+                            background-position-x: -370px;
+                        }
+                        .header-overlay-2 {
+                            position: absolute;
+                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_right_v2.svg);
+                            background-size: auto 100%;
+                            background-repeat: no-repeat;
+                            background-position: right -360px center;
                         }
                     }
                     
@@ -89,6 +107,7 @@
                     }
                 </style>
                 <div class="header-overlay wp-post-image" ></div>
+                <div class="header-overlay-2 wp-post-image" ></div>
 <!--                <div style="position: absolute; background-image: url('/wp-content/themes/dominante/domidesk-inverted.svg')" class="wp-post-image" ></div>-->
                 <?php if ( has_post_thumbnail() ) {
                     the_post_thumbnail('post-thumbnail', ['style' => get_post_meta( get_the_ID(), 'header_image_css', true)]);
@@ -99,7 +118,7 @@
                 $alt_description =  get_post_meta( get_the_ID(), 'alternative_description', true);
                 $description = empty($alt_description) ? get_bloginfo( 'description', 'display' ) : $alt_description;
                 if ( $description || is_customize_preview() ) : ?>
-                <div class="site-description" style="font-family: 'Quicksand', sans-serif; width: 100%">
+                <div class="site-description" style="font-family: 'Quicksand', sans-serif; width: 100%; display: none;">
                     <div style="float: right; width: 65%; height: 1em;"></div>
                     <div style="float: right; width: 54%; height: 1em;"></div>
                     <?php echo $description; /* WPCS: xss ok. */ ?>

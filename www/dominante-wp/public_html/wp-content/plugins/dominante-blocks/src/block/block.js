@@ -30,9 +30,9 @@ class DominanteBlockEdit extends Component {
 
     const contentTypeClass = contentType[0].toUpperCase() + contentType.slice(1);
 
-
-    return ( new wp.api.collections[contentTypeClass]() ).fetch().then( ( items ) => {
+    return ( new wp.api.collections[contentTypeClass]() ).fetch({ data: { per_page: 100 } } ).then( ( items ) => {
       if (items) {
+        console.log(items)
         const selectedItemId = props.attributes.selectedItemId || (items[0] && items[0].id);
 
         this.props.setAttributes({ selectedItemId });
