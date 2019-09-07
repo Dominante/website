@@ -106,12 +106,12 @@
                         }
                     }
                 </style>
+                <?php if ( has_post_thumbnail() ) { ?>
                 <div class="header-overlay wp-post-image" ></div>
                 <div class="header-overlay-2 wp-post-image" ></div>
 <!--                <div style="position: absolute; background-image: url('/wp-content/themes/dominante/domidesk-inverted.svg')" class="wp-post-image" ></div>-->
-                <?php if ( has_post_thumbnail() ) {
-                    the_post_thumbnail('post-thumbnail', ['style' => get_post_meta( get_the_ID(), 'header_image_css', true)]);
-                } else { ?>
+                    <?php the_post_thumbnail('post-thumbnail', ['style' => get_post_meta( get_the_ID(), 'header_image_css', true)]); ?>
+                <?php } else { ?>
                 <?php } ?>
             </div>
 			<?php
