@@ -763,7 +763,6 @@ gg}
 }
 
 .site-branding .site-description {
-  line-height: 1.5;
 }
 
 .header-image {
@@ -774,11 +773,9 @@ gg}
 /* Nyt täyttää suuren osan ruudusta, koska korkeus on aina 400 px. */
 /* Ehkä max-height auttaisi? */
 .site-branding .wp-post-image {
-  height: 370px;
+  height: 320px;
   width: 100%;
   object-fit: cover;
-  object-position: 50% 100%;
-
 }
 
 .content-area {
