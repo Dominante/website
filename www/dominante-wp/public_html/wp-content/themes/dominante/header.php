@@ -43,6 +43,10 @@
                 <style>
 
                     @media only screen and (max-width: 950px) {
+                        .header-image-container {
+                            border-bottom: 10px #7B1E32 solid;
+                        }
+
                         .header-overlay {
                             position: absolute;
                             background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
@@ -70,6 +74,10 @@
                     }
 
                     @media only screen and (min-width: 951px) {
+                        .header-image-container {
+                            border-bottom: 20px #7B1E32 solid;
+                        }
+
                         .header-overlay {
                             position: absolute;
                             background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
