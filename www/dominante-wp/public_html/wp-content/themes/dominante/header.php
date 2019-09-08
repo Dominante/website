@@ -27,7 +27,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
@@ -42,9 +43,40 @@
             <div class="header-image-container">
                 <style>
 
-                    @media only screen and (max-width: 950px) {
+										@media only screen and (max-width: 600px) {
+											.header-image-container {
+													border-bottom: 40px #7B1E32 solid;
+											}
+
+											.header-overlay {
+													position: absolute;
+													background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
+													background-size: auto 100%;
+													background-repeat: no-repeat;
+													background-position-x: -510px;
+													opacity: 0.75;
+											}
+											.header-overlay-2 {
+													position: absolute;
+													background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_right_v2.svg);
+													background-size: auto 100%;
+													background-repeat: no-repeat;
+													background-position: right -536px center;
+													opacity: 0.75;
+											}
+											.header-overlay-logo {
+													position: absolute;
+													background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/dominante_teksti_valkoinen-01.svg);
+													background-size: 210px auto;
+													background-repeat: no-repeat;
+													background-position: right 16% bottom 12px;
+													opacity: 1;
+											}
+										}
+
+										@media only screen and (min-width: 601px) {
                         .header-image-container {
-                            border-bottom: 10px #7B1E32 solid;
+                            border-bottom: 20px #7B1E32 solid;
                         }
 
                         .header-overlay {
@@ -75,7 +107,7 @@
 
                     @media only screen and (min-width: 951px) {
                         .header-image-container {
-                            border-bottom: 20px #7B1E32 solid;
+                            border-bottom: 10px #7B1E32 solid;
                         }
 
                         .header-overlay {
