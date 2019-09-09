@@ -124,7 +124,7 @@ function dominante_block_render_callback($content_type, $attributes) {
 			<a class="readmore-not-clicked readmore-toggle" href="">Lue lisää</a>
 			<a class="readmore-clicked readmore-toggle" href="">Näytä vähemmän</a>
 		</div>
-	</div>	
+	</div>
 </div>
 EOD;
 	    } else {
@@ -137,7 +137,7 @@ EOD;
 		<div class="dominante-block-content readmore-section">
 		    $content_output
 		</div>
-	</div>	
+	</div>
 </div>
 EOD;
 
