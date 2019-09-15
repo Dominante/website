@@ -42,10 +42,17 @@
 		<div class="site-branding">
             <div class="header-image-container">
                 <style>
-
 										@media only screen and (max-width: 600px) {
 											.header-image-container {
 													border-bottom: 40px #7B1E32 solid;
+											}
+											.site-branding .wp-post-image {
+											  height: 570px;
+											  width: -webkit-fill-available;
+											  object-fit: cover;
+											}
+											img[style*="object-position:"] {
+												object-position: center !important;
 											}
 
 											.header-overlay {
@@ -53,7 +60,7 @@
 													background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
 													background-size: auto 100%;
 													background-repeat: no-repeat;
-													background-position-x: -510px;
+													background-position-x: -1000px;
 													opacity: 0.75;
 											}
 											.header-overlay-2 {
@@ -61,13 +68,13 @@
 													background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_right_v2.svg);
 													background-size: auto 100%;
 													background-repeat: no-repeat;
-													background-position: right -536px center;
+													background-position: right -970px center;
 													opacity: 0.75;
 											}
 											.header-overlay-logo {
 													position: absolute;
 													background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/dominante_teksti_valkoinen-01.svg);
-													background-size: 210px auto;
+													background-size: 275px auto;
 													background-repeat: no-repeat;
 													background-position: right 16% bottom 12px;
 													opacity: 1;
@@ -98,7 +105,7 @@
                         .header-overlay-logo {
                             position: absolute;
                             background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/dominante_teksti_valkoinen-01.svg);
-                            background-size: 210px auto;
+                            background-size: 300px auto;
                             background-repeat: no-repeat;
                             background-position: right 16% bottom 12px;
                             opacity: 1;
@@ -135,6 +142,41 @@
                             opacity: 1;
                         }
                     }
+										@media only screen and (min-width: 1176px) {
+                        .header-image-container {
+                            border-bottom: 10px #7B1E32 solid;
+                        }
+												.site-branding .wp-post-image {
+												  height: 450px;
+												  width: -webkit-fill-available;
+												  object-fit: cover;
+												}
+
+                        .header-overlay {
+                            position: absolute;
+                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
+                            background-size: auto 100%;
+                            background-repeat: no-repeat;
+                            background-position-x: -450px;
+                            opacity: 0.75;
+                        }
+                        .header-overlay-2 {
+                            position: absolute;
+                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_right_v2.svg);
+                            background-size: auto 100%;
+                            background-repeat: no-repeat;
+                            background-position: right -650px center;
+                            opacity: 0.75;
+                        }
+                        .header-overlay-logo {
+                            position: absolute;
+                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/dominante_teksti_valkoinen-01.svg);
+                            background-size: 375px auto;
+                            background-repeat: no-repeat;
+                            background-position: right 16% bottom 12px;
+                            opacity: 1;
+                        }
+                    }
 
                     @media only screen and (max-width: 950px) {
                         .site-description {
@@ -149,6 +191,20 @@
                             text-align: left;
                             padding-left: 62px;
                             top: 243px;
+                            line-height: 1.2;
+                            font-family: 'Merriweather Sans', sans-serif;
+                            font-weight: bold;
+                            font-size: 14px;
+                            width: 450px;
+                        }
+                    }
+										@media only screen and (min-width: 1176px) {
+                        .site-description {
+                            position: absolute;
+                            color: #fff;
+                            text-align: left;
+                            padding-left: 62px;
+                            top: 373px;
                             line-height: 1.2;
                             font-family: 'Merriweather Sans', sans-serif;
                             font-weight: bold;
