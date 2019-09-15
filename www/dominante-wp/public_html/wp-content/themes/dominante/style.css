@@ -546,65 +546,6 @@ a:active {
   top: 32px;
 }
 
-.main-navigation a {
-  color: black;
-  padding: 0px 20px;
-  text-decoration: none;
-}
-
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 100%;
-  left: -999em;
-  z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-
-.main-navigation ul ul a {
-  width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
-}
-
-.main-navigation li {
-  float: left;
-  position: relative;
-}
-
-.main-navigation a {
-  display: block;
-  text-decoration: none;
-  color: black;
-}
-
-.main-navigation a:hover {
-  color: #555;
-}
-.main-navigation a:active {
-  color: #888;
-}
-
 /* Small menu. */
 /* TODO: Primary menu -tekstin tilalle esim. viivasymboli? */
 /* Täällä esimerkki viivasymbolista: https://websemantics.uk/articles/hamburger-menu-svg/ */
@@ -768,9 +709,6 @@ a:active {
   width: 100%;
 }
 
-/* TODO: Miten sivun yläosan kuvan saisi toimimaan paremmin mobiililaitteilla? */
-/* Nyt täyttää suuren osan ruudusta, koska korkeus on aina 400 px. */
-/* Ehkä max-height auttaisi? */
 .site-branding .wp-post-image {
   height: 320px;
   width: 100%;
@@ -845,10 +783,26 @@ h1.entry-title {
   font-family: "Quicksand", sans-serif;
 }
 
-@media (max-width: 815px) {
+@media only screen and (max-width: 815px) {
   .site-content {
     max-width: 80%;
     min-width: 0;
+  }
+}
+
+@media only screen and (max-width: 781px) {
+  .wp-block-column {
+    flex-basis: 100%;
+  }
+  .wp-block-column {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: block;
+  }
+}
+@media only screen and (min-width: 782px) {
+  .wp-block-column:last-child {
+    margin-right: 0;
   }
 }
 
@@ -859,10 +813,14 @@ p.site-title {
 /* Footer */
 
 .site-footer {
-  background-color: rgba(8, 6, 0);
-  color: rgba(249, 249, 250);
+  /* Safari fallback */
+  background-color: rgb(8, 6, 0);
+  color: rgb(249, 249, 250);
+  /* --- */
   font-family: "Heebo", sans-serif;
   font-size: 12px;
+  background-color: rgba(8, 6, 0);
+  color: rgba(249, 249, 250);
 }
 
 .site-info {
@@ -1065,7 +1023,7 @@ object {
 }
 
 /* TODO: Kannattaisiko kuva siirtää tässä block-text-blockin yläpuolelle (pienillä ruuduilla)? */
-@media (max-width: 815px) {
+@media only screen and (max-width: 815px) {
   .dominante-block-photo {
     padding-right: 10px;
     width: 140px;
@@ -1078,7 +1036,7 @@ object {
   }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .dominante-block {
     display: block;
     max-width: none;
