@@ -92,8 +92,16 @@ function dominante_block_render_callback($content_type, $attributes) {
 
 	if (count($results) == 1) {
 		$item = $results[0];
+		$title_array = explode("|", $item->post_title);
+		if (count($title_array) > 1) {
+			$date = $title_array[0];
+			$title = $title_array[1];
+		} else {
+			$date = "Please add featured image to this $content_type!";
+			$title = $item->post_title;
+		}
 		$thumbnail = get_the_post_thumbnail($id, 'dominante-block-image');
-	    $thumbnail = $thumbnail != '' ? $thumbnail : "Please add featured image to this $content_type!";
+	    $thumbnail = $thumbnail != '' ? $thumbnail : "$date";
 	    $excerpt = has_excerpt($id) ? $item->post_excerpt : '';
 
         $blocks = parse_blocks( $item->post_content );
@@ -113,7 +121,7 @@ function dominante_block_render_callback($content_type, $attributes) {
 	<div class="dominante-block-photo">$thumbnail</div>
 
 	<div class="dominante-block-text">
-		<h3 class="dominante-block-title">$item->post_title</h3>
+		<h3 class="dominante-block-title">$title</h3>
 		<div class="dominante-block-content readmore-section">
 			<div class="readmore-not-clicked">
 			  $excerpt

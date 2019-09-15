@@ -1055,12 +1055,13 @@ object {
   width: 200px;
   height: 200px;
   padding: 0;
-  margin-right: 10px;
+  margin-right: 20px;
   background-color: #7b1e32;
   color: white;
   text-align: center;
   font-size: 61px;
   font-family: "Raleway";
+  overflow: hidden;
 }
 
 /* TODO: Kannattaisiko kuva siirtää tässä block-text-blockin yläpuolelle (pienillä ruuduilla)? */
@@ -1073,6 +1074,7 @@ object {
     width: 130px;
     height: 130px;
     font-size: 40px;
+    margin-right: 10px;
   }
 }
 
