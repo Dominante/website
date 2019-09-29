@@ -42,8 +42,6 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
             <div class="header-image-container">
-                <style>
-                </style>
                 <?php if ( has_post_thumbnail() ) { ?>
                 <div class="header-overlay wp-post-image" ></div>
                 <div class="header-overlay-2 wp-post-image" ></div>
