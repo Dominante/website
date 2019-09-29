@@ -8,6 +8,8 @@
  * @package CGB
  */
 
+require_once('simple_html_dom.php');
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -92,6 +94,7 @@ function dominante_block_render_callback($content_type, $attributes) {
 
 	if (count($results) == 1) {
 		$item = $results[0];
+        $title = $item->post_title;
 		$title_array = explode("|", $item->post_title);
 		if (count($title_array) > 1) {
 			$date = $title_array[0];
@@ -116,13 +119,34 @@ function dominante_block_render_callback($content_type, $attributes) {
         }
 
         $content_output = apply_filters( 'the_content', $content_output );
+
+        $content_buttons_when_no_readmore = "";
+        $html = str_get_html($content_output);
+
+        foreach($html->find('.wp-block-embed-spotify') as $element) {
+            $content_buttons_when_no_readmore .= '<a class="readmore-not-clicked readmore-toggle wp-block-button__link" href="">Spotify</a>';
+        }
+        foreach($html->find('.wp-block-button__link') as $element) {
+            $element->class .= ' readmore-not-clicked';
+            $content_buttons_when_no_readmore .= $element->save();
+        }
+
+        $is_english = function_exists('pll_get_post_language') && pll_get_post_language($id) == 'en';
+        $show_more_text = $is_english ? "Read more" : "Lue lisää";
+        $show_less_text = $is_english ? "Show less" : "Näytä vähemmän";
+
 	    // TODO: Needs to detect the button with its link
         // in order to add a link to the image
 	    if (has_excerpt($id)) {
 				if ($thumbnail == '') {
 					return <<< EOD
 					<div class="dominante-block dominante-block-type-$content_type">
-						<div class="dominante-block-photo"><span class="day">$day</span><br><span class="month">$month</span></div>
+						<div class="dominante-block-date">
+						    <div class="dominante-block-date-box">
+                                <div class="day">$day</div>
+                                <div class="month">$month</div>
+                            </div>
+                        </div>
 						<div class="dominante-block-text">
 							<h3 class="dominante-block-title">$title</h3>
 							<div class="dominante-block-content readmore-section">
@@ -132,8 +156,9 @@ function dominante_block_render_callback($content_type, $attributes) {
 								<div class="readmore-clicked readmore-content">
 								  $content_output
 								</div>
-								<a class="readmore-not-clicked readmore-toggle" href="">Lue lisää</a>
-								<a class="readmore-clicked readmore-toggle" href="">Näytä vähemmän</a>
+								$content_buttons_when_no_readmore
+								<a class="readmore-not-clicked readmore-toggle wp-block-button__link" href="">$show_more_text</a>
+								<a class="readmore-clicked readmore-toggle wp-block-button__link" href="">$show_less_text</a>
 							</div>
 						</div>
 					</div>
@@ -151,8 +176,9 @@ EOD;
 								<div class="readmore-clicked readmore-content">
 								  $content_output
 								</div>
-								<a class="readmore-not-clicked readmore-toggle" href="">Lue lisää</a>
-								<a class="readmore-clicked readmore-toggle" href="">Näytä vähemmän</a>
+								$content_buttons_when_no_readmore
+								<a class="readmore-not-clicked readmore-toggle wp-block-button__link" href="">$show_more_text</a>
+								<a class="readmore-clicked readmore-toggle wp-block-button__link" href="">$show_less_text</a>
 							</div>
 						</div>
 					</div>
