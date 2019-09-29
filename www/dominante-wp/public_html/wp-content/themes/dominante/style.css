@@ -1027,12 +1027,16 @@ object {
   background-color: #7b1e32;
   color: white;
   text-align: center;
-  font-size: 61px;
+  font-size: 55px;
   font-family: "Raleway";
   overflow: hidden;
+  line-height: 1.2;
+}
+.dominante-block-type-concert .dominante-block-photo .day {
+  font-size: 90px;
+  line-height: 1.3;
 }
 
-/* TODO: Kannattaisiko kuva siirtää tässä block-text-blockin yläpuolelle (pienillä ruuduilla)? */
 @media only screen and (max-width: 815px) {
   .dominante-block-photo {
     padding-right: 10px;
@@ -1041,8 +1045,12 @@ object {
   .dominante-block-type-concert .dominante-block-photo {
     width: 130px;
     height: 130px;
-    font-size: 40px;
+    font-size: 35.75px;
     margin-right: 10px;
+  }
+  .dominante-block-type-concert .dominante-block-photo .day {
+    font-size: 58.5px;
+    line-height: 1.3;
   }
 }
 
@@ -1069,7 +1077,11 @@ object {
     height: 300px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 90px;
+    font-size: 82.5px;
+  }
+  .dominante-block-type-concert .dominante-block-photo .day {
+    font-size: 135px;
+    line-height: 1.3;
   }
 }
 
