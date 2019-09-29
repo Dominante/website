@@ -141,7 +141,7 @@ function dominante_block_render_callback($content_type, $attributes) {
 EOD;
 	    } else {
 		    return <<<EOD
-<div class="dominante-block">
+<div class="dominante-block dominante-block-type-$content_type">
 	<div class="dominante-block-photo">$thumbnail</div>
 
 	<div class="dominante-block-text">

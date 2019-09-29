@@ -12,3 +12,12 @@ addEventListener("DOMContentLoaded", function() {
     })
   })
 });
+
+$(document).ready(function() {
+  $('.dominante-block-photo img').magnificPopup({type:'image',
+    callbacks: {
+      elementParse: function(item) {
+        item.src = item.el.attr('srcset').split(',').pop().trim().split(' ')[0];
+      }
+    }});
+});

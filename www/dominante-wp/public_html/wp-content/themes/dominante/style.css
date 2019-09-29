@@ -1001,11 +1001,19 @@ object {
 .dominante-block-text {
   flex: 1;
 }
+
+
+
 .dominante-block-photo {
   padding-right: 20px;
 }
 .has-3-columns .dominante-block-photo {
   padding-right: 0;
+}
+
+.dominante-block-type-trip .dominante-block-photo:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(92%);
 }
 
 .dominante-block-title {
@@ -1168,4 +1176,203 @@ div.wpcf7 {
 
 .column-dominante-image-left figure {
   margin-top: 0;
+}
+.header-overlay-logo-hide {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .header-image-container {
+    border-bottom: 28.5px #7B1E32 solid;
+  }
+  .site-branding .wp-post-image {
+    height: 570px;
+    width: -webkit-fill-available;
+    object-fit: cover;
+  }
+  .header-overlay {
+    position: absolute;
+    background-image: url(gradient_left_v2.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position-x: -1000px;
+    opacity: 0.75;
+  }
+  .header-overlay-2 {
+    position: absolute;
+    background-image: url(gradient_right_v2.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right -970px center;
+    opacity: 0.75;
+  }
+  .header-overlay-logo {
+    position: absolute;
+    background-image: url(dominante_teksti_valkoinen-01.svg);
+    background-size: 275px auto;
+    background-repeat: no-repeat;
+    background-position: right 16% bottom 12px;
+    opacity: 1;
+  }
+  @media only screen and (max-height: 560px) {
+    .site-branding .wp-post-image {
+      height: 350px;
+    }
+  }
+  @media only screen and (min-height: 561px) {
+    .site-branding .wp-post-image {
+      height: 380px;
+    }
+  }
+  @media only screen and (min-height: 660px) {
+    .site-branding .wp-post-image {
+      height: 400px;
+    }
+  }
+  @media only screen and (min-height: 730px) {
+    .site-branding .wp-post-image {
+      height: 520px;
+    }
+  }
+  @media only screen and (min-height: 810px) {
+    .site-branding .wp-post-image {
+      height: 550px;
+    }
+  }
+  @media only screen and (min-height: 820px) {
+    .site-branding .wp-post-image {
+      height: 610px;
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .header-image-container {
+    border-bottom: 16px #7B1E32 solid;
+  }
+
+  .header-overlay {
+    position: absolute;
+    background-image: url(gradient_left_v2.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position-x: -510px;
+    opacity: 0.75;
+  }
+  .header-overlay-2 {
+    position: absolute;
+    background-image: url(gradient_right_v2.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right -536px center;
+    opacity: 0.75;
+  }
+  .header-overlay-logo {
+    position: absolute;
+    background-image: url(dominante_teksti_valkoinen-01.svg);
+    background-size: 300px auto;
+    background-repeat: no-repeat;
+    background-position: right 16% bottom 12px;
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 951px) {
+  .header-image-container {
+    border-bottom: 16px #7B1E32 solid;
+  }
+
+  .header-overlay {
+    position: absolute;
+    background-image: url(gradient_left_v2.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position-x: -256px;
+    opacity: 0.75;
+  }
+  .header-overlay-2 {
+    position: absolute;
+    background-image: url(gradient_right_v2.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right -441px center;
+    opacity: 0.75;
+  }
+  .header-overlay-logo {
+    position: absolute;
+    background-image: url(dominante_teksti_valkoinen-01.svg);
+    background-size: 375px auto;
+    background-repeat: no-repeat;
+    background-position: right 16% bottom 12px;
+    opacity: 1;
+  }
+}
+@media only screen and (min-width: 1176px) {
+  .header-image-container {
+    border-bottom: 22.5px #7B1E32 solid;
+  }
+  .site-branding .wp-post-image {
+    height: 450px;
+    width: -webkit-fill-available;
+    object-fit: cover;
+  }
+
+  .header-overlay {
+    position: absolute;
+    background-image: url(gradient_left_v2.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position-x: -450px;
+    opacity: 0.75;
+  }
+  .header-overlay-2 {
+    position: absolute;
+    background-image: url(gradient_right_v2.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right -650px center;
+    opacity: 0.75;
+  }
+  .header-overlay-logo {
+    position: absolute;
+    background-image: url(dominante_teksti_valkoinen-01.svg);
+    background-size: 375px auto;
+    background-repeat: no-repeat;
+    background-position: right 16% bottom 12px;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .site-description {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 951px) {
+  .site-description {
+    position: absolute;
+    color: #fff;
+    text-align: left;
+    padding-left: 62px;
+    top: 243px;
+    line-height: 1.2;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    width: 450px;
+  }
+}
+@media only screen and (min-width: 1176px) {
+  .site-description {
+    position: absolute;
+    color: #fff;
+    text-align: left;
+    padding-left: 62px;
+    top: 373px;
+    line-height: 1.2;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    width: 450px;
+  }
 }
