@@ -78,6 +78,36 @@
 													background-position: right 16% bottom 12px;
 													opacity: 1;
 											}
+                      @media only screen and (max-height: 560px) {
+                        .site-branding .wp-post-image {
+  											  height: 350px;
+  											}
+                      }
+                      @media only screen and (min-height: 561px) {
+                        .site-branding .wp-post-image {
+  											  height: 380px;
+  											}
+                      }
+                      @media only screen and (min-height: 660px) {
+                        .site-branding .wp-post-image {
+  											  height: 400px;
+  											}
+                      }
+                      @media only screen and (min-height: 730px) {
+                        .site-branding .wp-post-image {
+  											  height: 520px;
+  											}
+                      }
+                      @media only screen and (min-height: 810px) {
+                        .site-branding .wp-post-image {
+  											  height: 550px;
+  											}
+                      }
+                      @media only screen and (min-height: 820px) {
+                        .site-branding .wp-post-image {
+  											  height: 610px;
+  											}
+                      }
 										}
 
 										@media only screen and (min-width: 601px) {
