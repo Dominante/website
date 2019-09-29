@@ -503,16 +503,6 @@ a {
   text-decoration: none;
 }
 
-a:visited {
-  color: purple;
-}
-
-a:hover,
-a:focus,
-a:active {
-  color: midnightblue;
-}
-
 a:focus {
   outline: thin dotted;
 }
@@ -1076,6 +1066,15 @@ object {
 
 .wp-block-button__link {
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .readmore-section .readmore-not-clicked.readmore-content {
+    display: none;
+  }
+  .readmore-section .readmore-not-clicked.readmore-toggle {
+    text-align: center;
+  }
 }
 
 /* Main menu positionning */

@@ -124,3 +124,4 @@ function remove_draft_widget(){
 
 
 add_image_size('dominante-block-image',200,200, true);
+add_image_size('dominante-block-image-trip',266,177, true);

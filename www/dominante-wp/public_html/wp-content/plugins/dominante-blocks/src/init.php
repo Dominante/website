@@ -100,7 +100,11 @@ function dominante_block_render_callback($content_type, $attributes) {
 			$date = "Please add featured image to this $content_type!";
 			$title = $item->post_title;
 		}
-		$thumbnail = get_the_post_thumbnail($id, 'dominante-block-image');
+		if ($content_type == 'trip') {
+			$thumbnail = get_the_post_thumbnail($id, 'dominante-block-image-trip');
+		} else {
+			$thumbnail = get_the_post_thumbnail($id, 'dominante-block-image');
+		}
 	    $thumbnail = $thumbnail != '' ? $thumbnail : "$date";
 	    $excerpt = has_excerpt($id) ? $item->post_excerpt : '';
 
@@ -123,10 +127,10 @@ function dominante_block_render_callback($content_type, $attributes) {
 	<div class="dominante-block-text">
 		<h3 class="dominante-block-title">$title</h3>
 		<div class="dominante-block-content readmore-section">
-			<div class="readmore-not-clicked">
+			<div class="readmore-not-clicked readmore-content">
 			  $excerpt
 			</div>
-			<div class="readmore-clicked">
+			<div class="readmore-clicked readmore-content">
 			  $content_output
 			</div>
 			<a class="readmore-not-clicked readmore-toggle" href="">Lue lisää</a>

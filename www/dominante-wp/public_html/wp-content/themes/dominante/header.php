@@ -42,19 +42,18 @@
 		<div class="site-branding">
             <div class="header-image-container">
                 <style>
+                    .header-overlay-logo-hide {
+                      display: none;
+                    }
 										@media only screen and (max-width: 600px) {
 											.header-image-container {
-													border-bottom: 40px #7B1E32 solid;
+													border-bottom: 28.5px #7B1E32 solid;
 											}
 											.site-branding .wp-post-image {
 											  height: 570px;
 											  width: -webkit-fill-available;
 											  object-fit: cover;
 											}
-											img[style*="object-position:"] {
-												object-position: center !important;
-											}
-
 											.header-overlay {
 													position: absolute;
 													background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
@@ -83,7 +82,7 @@
 
 										@media only screen and (min-width: 601px) {
                         .header-image-container {
-                            border-bottom: 20px #7B1E32 solid;
+                            border-bottom: 16px #7B1E32 solid;
                         }
 
                         .header-overlay {
@@ -114,7 +113,7 @@
 
                     @media only screen and (min-width: 951px) {
                         .header-image-container {
-                            border-bottom: 10px #7B1E32 solid;
+                            border-bottom: 16px #7B1E32 solid;
                         }
 
                         .header-overlay {
@@ -144,7 +143,7 @@
                     }
 										@media only screen and (min-width: 1176px) {
                         .header-image-container {
-                            border-bottom: 10px #7B1E32 solid;
+                            border-bottom: 22.5px #7B1E32 solid;
                         }
 												.site-branding .wp-post-image {
 												  height: 450px;
@@ -216,9 +215,7 @@
                 <?php if ( has_post_thumbnail() ) { ?>
                 <div class="header-overlay wp-post-image" ></div>
                 <div class="header-overlay-2 wp-post-image" ></div>
-                <?php if ( is_front_page()  ) { ?>
                 <div class="header-overlay-logo wp-post-image" ></div>
-                <?php } ?>
 <!--                <div style="position: absolute; background-image: url('/wp-content/themes/dominante/domidesk-inverted.svg')" class="wp-post-image" ></div>-->
                     <?php the_post_thumbnail('post-thumbnail', ['style' => get_post_meta( get_the_ID(), 'header_image_css', true)]); ?>
                 <?php } else { ?>
