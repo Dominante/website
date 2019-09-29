@@ -118,7 +118,7 @@
 
                         .header-overlay {
                             position: absolute;
-                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
+                            background-image: url(<?php echo get_site_url() ?>/wp-content/themes/dominante/gradient_left_v2.svg);
                             background-size: auto 100%;
                             background-repeat: no-repeat;
                             background-position-x: -256px;
@@ -126,7 +126,7 @@
                         }
                         .header-overlay-2 {
                             position: absolute;
-                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_right_v2.svg);
+                            background-image: url(<?php echo get_site_url() ?>/wp-content/themes/dominante/gradient_right_v2.svg);
                             background-size: auto 100%;
                             background-repeat: no-repeat;
                             background-position: right -441px center;
@@ -134,7 +134,7 @@
                         }
                         .header-overlay-logo {
                             position: absolute;
-                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/dominante_teksti_valkoinen-01.svg);
+                            background-image: url(<?php echo get_site_url() ?>/wp-content/themes/dominante/dominante_teksti_valkoinen-01.svg);
                             background-size: 375px auto;
                             background-repeat: no-repeat;
                             background-position: right 16% bottom 12px;
@@ -153,7 +153,7 @@
 
                         .header-overlay {
                             position: absolute;
-                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
+                            background-image: url(<?php echo get_site_url() ?>/wp-content/themes/dominante/gradient_left_v2.svg);
                             background-size: auto 100%;
                             background-repeat: no-repeat;
                             background-position-x: -450px;
@@ -161,7 +161,7 @@
                         }
                         .header-overlay-2 {
                             position: absolute;
-                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_right_v2.svg);
+                            background-image: url(<?php echo get_site_url() ?>/wp-content/themes/dominante/gradient_right_v2.svg);
                             background-size: auto 100%;
                             background-repeat: no-repeat;
                             background-position: right -650px center;
@@ -169,7 +169,7 @@
                         }
                         .header-overlay-logo {
                             position: absolute;
-                            background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/dominante_teksti_valkoinen-01.svg);
+                            background-image: url(<?php echo get_site_url() ?>/wp-content/themes/dominante/dominante_teksti_valkoinen-01.svg);
                             background-size: 375px auto;
                             background-repeat: no-repeat;
                             background-position: right 16% bottom 12px;
