@@ -990,12 +990,24 @@ object {
   padding-bottom: 15px;
 }
 
+.has-3-columns .dominante-block {
+  display: block;
+}
+
+.has-3-columns .dominante-block p {
+  text-align: left;
+}
+
 .dominante-block-text {
   flex: 1;
 }
 .dominante-block-photo {
   padding-right: 20px;
 }
+.has-3-columns .dominante-block-photo {
+  padding-right: 0;
+}
+
 .dominante-block-title {
   text-align: left;
 }
