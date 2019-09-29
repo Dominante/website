@@ -95,17 +95,16 @@ function dominante_block_render_callback($content_type, $attributes) {
 		$title_array = explode("|", $item->post_title);
 		if (count($title_array) > 1) {
 			$date = $title_array[0];
+			$date_array = explode(" ", $date);
+			$day = $date_array[0];
+			$month = $date_array[1];
 			$title = $title_array[1];
-		} else {
-			$date = "Please add featured image to this $content_type!";
-			$title = $item->post_title;
 		}
 		if ($content_type == 'trip') {
 			$thumbnail = get_the_post_thumbnail($id, 'dominante-block-image-trip');
 		} else {
 			$thumbnail = get_the_post_thumbnail($id, 'dominante-block-image');
 		}
-	    $thumbnail = $thumbnail != '' ? $thumbnail : "$date";
 	    $excerpt = has_excerpt($id) ? $item->post_excerpt : '';
 
         $blocks = parse_blocks( $item->post_content );
@@ -120,37 +119,57 @@ function dominante_block_render_callback($content_type, $attributes) {
 	    // TODO: Needs to detect the button with its link
         // in order to add a link to the image
 	    if (has_excerpt($id)) {
-		    return <<<EOD
-<div class="dominante-block dominante-block-type-$content_type">
-	<div class="dominante-block-photo">$thumbnail</div>
-
-	<div class="dominante-block-text">
-		<h3 class="dominante-block-title">$title</h3>
-		<div class="dominante-block-content readmore-section">
-			<div class="readmore-not-clicked readmore-content">
-			  $excerpt
-			</div>
-			<div class="readmore-clicked readmore-content">
-			  $content_output
-			</div>
-			<a class="readmore-not-clicked readmore-toggle" href="">Lue lisää</a>
-			<a class="readmore-clicked readmore-toggle" href="">Näytä vähemmän</a>
-		</div>
-	</div>
-</div>
+				if ($thumbnail == '') {
+					return <<< EOD
+					<div class="dominante-block dominante-block-type-$content_type">
+						<div class="dominante-block-photo"><span class="day">$day</span><br><span class="month">$month</span></div>
+						<div class="dominante-block-text">
+							<h3 class="dominante-block-title">$title</h3>
+							<div class="dominante-block-content readmore-section">
+								<div class="readmore-not-clicked readmore-content">
+								  $excerpt
+								</div>
+								<div class="readmore-clicked readmore-content">
+								  $content_output
+								</div>
+								<a class="readmore-not-clicked readmore-toggle" href="">Lue lisää</a>
+								<a class="readmore-clicked readmore-toggle" href="">Näytä vähemmän</a>
+							</div>
+						</div>
+					</div>
 EOD;
-	    } else {
+				} else {
+					return <<< EOD
+					<div class="dominante-block dominante-block-type-$content_type">
+						<div class="dominante-block-photo">$thumbnail</div>
+						<div class="dominante-block-text">
+							<h3 class="dominante-block-title">$title</h3>
+							<div class="dominante-block-content readmore-section">
+								<div class="readmore-not-clicked readmore-content">
+								  $excerpt
+								</div>
+								<div class="readmore-clicked readmore-content">
+								  $content_output
+								</div>
+								<a class="readmore-not-clicked readmore-toggle" href="">Lue lisää</a>
+								<a class="readmore-clicked readmore-toggle" href="">Näytä vähemmän</a>
+							</div>
+						</div>
+					</div>
+EOD;
+				}
+    	} else {
 		    return <<<EOD
-<div class="dominante-block">
-	<div class="dominante-block-photo">$thumbnail</div>
+				<div class="dominante-block">
+					<div class="dominante-block-photo">$thumbnail</div>
 
-	<div class="dominante-block-text">
-		<h3 class="dominante-block-title">$item->post_title</h3>
-		<div class="dominante-block-content readmore-section">
-		    $content_output
-		</div>
-	</div>
-</div>
+					<div class="dominante-block-text">
+						<h3 class="dominante-block-title">$item->post_title</h3>
+						<div class="dominante-block-content readmore-section">
+						    $content_output
+						</div>
+					</div>
+				</div>
 EOD;
 
 	    }

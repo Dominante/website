@@ -59,15 +59,13 @@
 													background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_left_v2.svg);
 													background-size: auto 100%;
 													background-repeat: no-repeat;
-													background-position-x: -1000px;
-													opacity: 0.75;
+													opacity: 0.75
 											}
 											.header-overlay-2 {
 													position: absolute;
 													background-image: url(https://www.dominante.fi/kehitys/wp-content/themes/dominante/gradient_right_v2.svg);
 													background-size: auto 100%;
 													background-repeat: no-repeat;
-													background-position: right -970px center;
 													opacity: 0.75;
 											}
 											.header-overlay-logo {
@@ -82,31 +80,67 @@
                         .site-branding .wp-post-image {
   											  height: 350px;
   											}
+                        .header-overlay {
+  													background-position-x: -620px;
+  											}
+                        .header-overlay-2 {
+  													background-position: right -600px center;
+  											}
                       }
                       @media only screen and (min-height: 561px) {
                         .site-branding .wp-post-image {
   											  height: 380px;
+  											}
+                        .header-overlay {
+  													background-position-x: -660px;
+  											}
+                        .header-overlay-2 {
+  													background-position: right -640px center;
   											}
                       }
                       @media only screen and (min-height: 660px) {
                         .site-branding .wp-post-image {
   											  height: 400px;
   											}
+                        .header-overlay {
+  													background-position-x: -700px;
+  											}
+                        .header-overlay-2 {
+  													background-position: right -670px center;
+  											}
                       }
                       @media only screen and (min-height: 730px) {
                         .site-branding .wp-post-image {
   											  height: 520px;
+  											}
+                        .header-overlay {
+  													background-position-x: -920px;
+  											}
+                        .header-overlay-2 {
+  													background-position: right -880px center;
   											}
                       }
                       @media only screen and (min-height: 810px) {
                         .site-branding .wp-post-image {
   											  height: 550px;
   											}
+                        .header-overlay {
+  													background-position-x: -1000px;
+  											}
+                        .header-overlay-2 {
+  													background-position: right -940px center;
+  											}
                       }
                       @media only screen and (min-height: 820px) {
                         .site-branding .wp-post-image {
   											  height: 610px;
   											}
+                        .header-overlay {
+                            background-position-x: -1080px;
+                        }
+                        .header-overlay-2 {
+                            background-position: right -1050px center;
+                        }
                       }
 										}
 
