@@ -108,7 +108,7 @@ function dominante_block_render_callback($content_type, $attributes) {
 		} else {
 			$thumbnail = get_the_post_thumbnail($id, 'dominante-block-image');
 		}
-	    $excerpt = has_excerpt($id) ? $item->post_excerpt : '';
+	    $excerpt = has_excerpt($id) ? nl2br($item->post_excerpt) : '';
 
         $blocks = parse_blocks( $item->post_content );
 
@@ -121,14 +121,17 @@ function dominante_block_render_callback($content_type, $attributes) {
         $content_output = apply_filters( 'the_content', $content_output );
 
         $content_buttons_when_no_readmore = "";
-        $html = str_get_html($content_output);
 
-        foreach($html->find('.wp-block-embed-spotify') as $element) {
-            $content_buttons_when_no_readmore .= '<a class="readmore-not-clicked readmore-toggle wp-block-button__link" href="">Spotify</a>';
-        }
-        foreach($html->find('.wp-block-button__link') as $element) {
-            $element->class .= ' readmore-not-clicked';
-            $content_buttons_when_no_readmore .= $element->save();
+        if (strpos($content_output,'wp-block-embed-spotify') !== false || strpos($content_output,'wp-block-button__link') !== false) {
+            $html = str_get_html($content_output);
+
+            foreach($html->find('.wp-block-embed-spotify') as $element) {
+                $content_buttons_when_no_readmore .= '<a class="readmore-not-clicked readmore-toggle wp-block-button__link" href="">Spotify</a>';
+            }
+            foreach($html->find('.wp-block-button__link') as $element) {
+                $element->class .= ' readmore-not-clicked';
+                $content_buttons_when_no_readmore .= $element->save();
+            }
         }
 
         $is_english = function_exists('pll_get_post_language') && pll_get_post_language($id) == 'en';

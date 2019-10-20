@@ -13,6 +13,22 @@
   padding-bottom: 15px;
 }
 
+
+.has-3-columns .dominante-block {
+  display: block;
+}
+
+.wp-block-button__link {
+  color: rgb(260, 106, 35) !important;
+  background-color: transparent;
+  padding: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 10px;
+  display: block;
+  text-align: left;
+}
 .dominante-block-text {
   flex: 1;
 }
