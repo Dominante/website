@@ -703,6 +703,7 @@ a:active {
   height: 320px;
   width: 100%;
   object-fit: cover;
+  font-family: 'object-fit: contain;';
 }
 
 .content-area {
@@ -1231,6 +1232,7 @@ div.wpcf7 {
     height: 570px;
     width: -webkit-fill-available;
     object-fit: cover;
+    font-family: 'object-fit: contain;';
   }
   .header-overlay {
     position: absolute;
@@ -1387,6 +1389,7 @@ div.wpcf7 {
     height: 450px;
     width: -webkit-fill-available;
     object-fit: cover;
+    font-family: 'object-fit: contain;';
   }
   .header-overlay {
     position: absolute;

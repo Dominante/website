@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Dominante Must-Use plugin for defining content types etc
